@@ -8,9 +8,11 @@ import SidebarCTA from '@/components/SidebarCTA.astro';
 import FAQSection from '@/components/FAQSection.astro';
 import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
+import ReviewPromoCard from '@/components/ReviewPromoCard.astro';
 import config from '@/data/site.config';
 
 const topProduct = config.products[0];
+const contraindicationsBanner = '/images/content/caffe-ai-funghi-controindicazioni-banner.webp';
 const pageTitle = 'Caffè ai funghi: controindicazioni, rischi e precauzioni';
 const pageDescription = 'Guida chiara sulle controindicazioni del caffè ai funghi: effetti collaterali, caffeina, gravidanza, farmaci, digestione e quando chiedere un parere medico.';
 
@@ -46,6 +48,10 @@ const cautiousProducts = [
     description: 'French Mush resta la scelta più coerente se l’obiettivo è provare un vero prodotto centrato sui funghi funzionali. Su una pagina dedicata alle precauzioni, però, lo presentiamo dopo le alternative più semplici perché la formula è più tecnica e richiede un minimo di attenzione agli estratti, al momento di assunzione e alla tolleranza individuale.\n\nÈ una buona opzione per chi vuole una routine più funzionale, ma non dovrebbe essere scelta alla cieca: se assumi farmaci, hai una patologia cronica o sei molto sensibile agli integratori, meglio chiedere un parere professionale prima di iniziare.'
   }
 ];
+
+const bonjourProduct = cautiousProducts.find((item) => item.brand === 'Bonjour Drink')!;
+const clearlyProduct = cautiousProducts.find((item) => item.brand === 'Clearly')!;
+const frenchMushProduct = cautiousProducts.find((item) => item.brand === 'French Mush')!;
 
 const faq = [
   { question: 'Il caffè ai funghi è pericoloso?', answer: 'Per un adulto sano, un uso moderato può essere ben tollerato. Non è però una bevanda neutra per tutti: bisogna controllare caffeina, estratti di funghi, adattogeni, farmaci assunti e sensibilità digestiva personale.' },
@@ -83,7 +89,7 @@ const productLink = (brand: string, label = brand) => {
     datePublished: '2026-04-29',
     dateModified: '2026-04-29',
     mainEntityOfPage: `${config.domain}/caffe-ai-funghi-controindicazioni/`,
-    image: `${config.domain}/images/content/emd-cafe-champignons-banner.webp`,
+    image: `${config.domain}${contraindicationsBanner}`,
   })} />
   <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
     '@context': 'https://schema.org',
@@ -99,7 +105,7 @@ const productLink = (brand: string, label = brand) => {
     date="29 aprile 2026"
     readingTime="12 min di lettura"
     breadcrumbs={[{ label: 'Caffè ai funghi', href: '/' }, { label: 'Controindicazioni', href: '/caffe-ai-funghi-controindicazioni/' }]}
-    bannerImage="/images/content/emd-cafe-champignons-banner.webp"
+    bannerImage={contraindicationsBanner}
     product={{ name: topProduct.name, image: topProduct.image, promoCode: topProduct.promoCode, promoPercent: topProduct.promoPercent, originalPrice: topProduct.originalPrice, discountPrice: topProduct.discountPrice, affiliateLink: topProduct.affiliateLink }}
     heroButton={{ text: 'Vedi le opzioni prudenti', href: '#scelte' }}
     showOfferBlock={false}
@@ -155,6 +161,12 @@ const productLink = (brand: string, label = brand) => {
           <p>Se sei sensibile alla caffeina, evita di ragionare solo con il nome commerciale. Cerca parole come “coffee”, “café”, “matcha”, “green tea”, “guarana”, “yerba mate” o dosaggi di caffeina. Se vuoi una bevanda da pomeriggio o sera, una formula senza caffeina classica è più prudente. Se invece vuoi sostituire il primo espresso del mattino, una piccola quota di caffeina può essere accettabile, ma deve rimanere coerente con la tua tolleranza.</p>
         </section>
 
+        <section class="rich-text seo-guide promo-section">
+          <h2>La raccomandazione più prudente per iniziare</h2>
+          <p>Se vuoi limitare i rischi, la scelta più sensata è partire da una formula semplice, leggibile e facile da interrompere se non ti convince. Per questo, su questa pagina, <strong>Bonjour Drink</strong> è la prima opzione da considerare: approccio più morbido, routine chiara e buon fit per chi vuole ridurre il caffè senza cercare una formula troppo intensa.</p>
+        </section>
+        <ReviewPromoCard product={bonjourProduct} />
+
         <ComparisonTable title="Situazione e livello di prudenza" headers={[{label:'Profilo'}, {label:'Approccio consigliato'}]} rows={[
           { cells: ['<span class="table-fit">☕ Sensibile alla caffeina</span><span class="table-muted"> Nervosismo, palpitazioni, sonno leggero</span>', 'Scegli formule senza caffeina classica e usa solo al mattino'], highlight: true },
           { cells: ['<span class="table-fit">🤰 Gravidanza o allattamento</span><span class="table-muted"> Situazione da non improvvisare</span>', 'Chiedi parere medico prima di provare'] },
@@ -175,6 +187,12 @@ const productLink = (brand: string, label = brand) => {
           <p>Le persone con malattie autoimmuni dovrebbero essere caute con prodotti che comunicano su “immunità” o funghi funzionali. Chi ha problemi epatici o renali dovrebbe evitare formule complesse senza parere medico. Chi ha allergie note ai funghi, muffe o ingredienti specifici deve leggere con attenzione la composizione e interrompere se compaiono segnali anomali.</p>
           <p>Un farmacista può spesso aiutare rapidamente: basta portare la lista degli ingredienti, il dosaggio consigliato e la lista dei farmaci assunti. È molto più utile che cercare una risposta generica online, perché il rischio reale dipende dal tuo caso concreto.</p>
         </section>
+
+        <section class="rich-text seo-guide promo-section">
+          <h2>Alternativa semplice se vuoi evitare il caffè classico</h2>
+          <p><strong>Clearly Not Coffee</strong> è utile se il tuo obiettivo principale non è “più performance”, ma uscire dalla routine dell’espresso. Il posizionamento è facile da capire: una bevanda alternativa, moderna e meno centrata sulla stimolazione pura. Resta importante leggere l’etichetta e verificare la presenza di caffeina o altri ingredienti attivi.</p>
+        </section>
+        <ReviewPromoCard product={clearlyProduct} />
 
         <section id="digestione" class="rich-text seo-guide">
           <h2>Sensibilità digestiva: come evitare fastidi</h2>
@@ -200,6 +218,12 @@ const productLink = (brand: string, label = brand) => {
           <p>Osserva quattro segnali: digestione, nervosismo, energia e sonno. Se la digestione peggiora, se ti senti troppo stimolato o se dormi peggio, riduci o interrompi. Se invece riesci a ridurre il caffè classico senza nervosismo e con una buona tolleranza, allora la bevanda può avere senso nella tua routine.</p>
           <p>Evita l’errore classico: iniziare con il prodotto più potente perché sembra più efficace. Per molte persone la scelta migliore è quella più ripetibile. Una formula moderata, piacevole e ben tollerata vale più di una miscela impressionnante che finisce dimenticata dopo tre giorni.</p>
         </section>
+
+        <section class="rich-text seo-guide promo-section">
+          <h2>Se vuoi davvero una formula centrata sui funghi</h2>
+          <p><strong>French Mush</strong> è più pertinente se vuoi testare una bevanda orientata ai funghi funzionali e non solo una alternativa al caffè. È una scelta più tecnica: ha senso se leggi bene ingredienti, momento di assunzione e tolleranza personale. Se hai farmaci, patologie o forte sensibilità, meglio chiedere un parere prima.</p>
+        </section>
+        <ReviewPromoCard product={frenchMushProduct} />
 
         <section id="scelte" class="rich-text seo-guide">
           <h2>Quali opzioni scegliere se vuoi restare prudente</h2>

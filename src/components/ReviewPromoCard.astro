@@ -4,10 +4,11 @@ import PromoCodeButton from './PromoCodeButton.astro';
 
 interface Product {
   name: string;
+  brand?: string;
   image: string;
   rating: number;
   productType: string;
-  productCategory: string;
+  productCategory?: string;
   origin: string;
   availability: string;
   shipping?: string;
@@ -44,7 +45,7 @@ const originPrefix = product.originFlag || (/^[\u{1F1E6}-\u{1F1FF}]{2}/u.test(pr
 
     <!-- Header: title + rating -->
     <div class="rpc-header">
-      <h4 class="rpc-title">{product.name}</h4>
+      <h4 class="rpc-title">{product.brand ? `${product.name} - ${product.brand}` : product.name}</h4>
       <div class="rpc-rating">
         <StarRating rating={product.rating} size="sm" />
         <span class="rpc-rating-val">{product.rating.toFixed(1)}</span>
@@ -57,7 +58,7 @@ const originPrefix = product.originFlag || (/^[\u{1F1E6}-\u{1F1FF}]{2}/u.test(pr
       <!-- Supplement type -->
       <div class="rpc-info-row">
         <svg class="rpc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-4.97 0-9 3.13-9 7s4.03 7 9 7 9-3.13 9-7-4.03-7-9-7z"/><path d="M12 3c-1.66 0-3 1.12-3 2.5S10.34 8 12 8s3-1.12 3-2.5S13.66 3 12 3z"/><path d="M9 17v2a3 3 0 0 0 6 0v-2"/><path d="M12 17v5"/></svg>
-        <span class="rpc-label">Supplement type:</span>
+        <span class="rpc-label">Tipo di prodotto:</span>
         <span class="rpc-value">{product.productCategory || product.productType}</span>
       </div>
       <!-- Origin -->
@@ -69,8 +70,8 @@ const originPrefix = product.originFlag || (/^[\u{1F1E6}-\u{1F1FF}]{2}/u.test(pr
       <!-- Shipping -->
       <div class="rpc-info-row">
         <svg class="rpc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
-        <span class="rpc-label">Shipping:</span>
-        <span class="rpc-value">{product.shipping || 'France'}</span>
+        <span class="rpc-label">Consegna:</span>
+        <span class="rpc-value">{product.shipping || 'Italia / Europa'}</span>
       </div>
       <!-- Promo -->
       {product.promoCode && product.promoPercent > 0 && (
@@ -85,7 +86,7 @@ const originPrefix = product.originFlag || (/^[\u{1F1E6}-\u{1F1FF}]{2}/u.test(pr
 
     <!-- Price -->
     <div class="rpc-price">
-      <span class="rpc-price-label">From:</span>
+      <span class="rpc-price-label">A partire da:</span>
       <span class="rpc-price-old">{product.originalPrice}</span>
       <span class="rpc-price-new">{product.discountPrice}</span>
     </div>
