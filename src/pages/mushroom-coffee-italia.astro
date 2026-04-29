@@ -1,0 +1,225 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHero from '@/components/BlogHero.astro';
+import FirstReview from '@/components/FirstReview.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import SidebarCTA from '@/components/SidebarCTA.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import ComparisonTable from '@/components/ComparisonTable.astro';
+import InnerNote from '@/components/InnerNote.astro';
+import ReviewPromoCard from '@/components/ReviewPromoCard.astro';
+import config from '@/data/site.config';
+
+const topProduct = config.products[0];
+const pageTitle = 'Mushroom coffee Italia: cos’è, dove comprarlo e marche disponibili';
+const pageDescription = 'Guida ponte per chi cerca mushroom coffee dall’Italia: differenza con caffè ai funghi, mercato italiano, marche europee e criteri di scelta.';
+const bannerImage = '/images/content/mushroom-coffee-italia-banner.webp';
+
+const tocItems = [
+  { id: 'sintesi', label: 'Sintesi' },
+  { id: 'definizione', label: 'Definizione' },
+  { id: 'caffe-ai-funghi', label: 'Differenza in italiano' },
+  { id: 'mercato-italia', label: 'Mercato in Italia' },
+  { id: 'acquistare', label: 'Dove comprare' },
+  { id: 'marche-europa', label: 'Marche in Europa' },
+  { id: 'scegliere', label: 'Come scegliere' },
+  { id: 'errori', label: 'Errori da evitare' },
+  { id: 'alternative-caffe', label: 'Alternativa al caffè' },
+  { id: 'comparativo', label: 'Comparativo italiano' },
+  { id: 'faq', label: 'FAQ' },
+];
+
+const faq = [
+  { question: 'Mushroom coffee e caffè ai funghi sono la stessa cosa?', answer: 'Sono molto vicini, ma non sempre identici. “Mushroom coffee” è il termine internazionale usato per bevande con caffè o gusto tostato e funghi funzionali. “Caffè ai funghi” è la traduzione italiana, ma può includere anche alternative senza vero caffè.' },
+  { question: 'Si può comprare mushroom coffee in Italia?', answer: 'Sì, soprattutto online. Il mercato italiano è ancora giovane, quindi spesso le opzioni più interessanti arrivano da brand europei che spediscono in Italia o da siti ufficiali con coupon verificati.' },
+  { question: 'Qual è la marca da guardare per prima?', answer: 'Per questa pagina ponte mettiamo avanti French Mush, perché è il partner principale, vende in Italia e resta coerente con l’intenzione mushroom coffee/caffè ai funghi.' },
+  { question: 'Il mushroom coffee contiene caffeina?', answer: 'Dipende. Alcuni prodotti contengono caffè vero o tè, altri sono alternative senza caffeina classica a base di cacao, orzo, cicoria o mix funzionali. Bisogna leggere etichetta e dosaggio.' },
+  { question: 'Meglio Amazon o sito ufficiale?', answer: 'Per questa categoria conviene partire dai siti ufficiali o link verificati: è più facile controllare formula, disponibilità, prezzo reale, coupon e condizioni di spedizione.' },
+];
+
+const productLink = (brand: string, label = brand) => {
+  const product = config.products.find((item) => item.brand === brand);
+  const href = product?.affiliateLink && product.affiliateLink !== '#' ? product.affiliateLink : `/#product-${product?.slug ?? ''}`;
+  const rel = href.startsWith('/') || href.startsWith('#') ? '' : ' rel="nofollow sponsored" target="_blank"';
+  return `<a class="table-link" href="${href}"${rel}>${label}</a>`;
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: config.domain },
+      { '@type': 'ListItem', position: 2, name: 'Mushroom coffee Italia', item: `${config.domain}/mushroom-coffee-italia/` },
+    ],
+  })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageTitle,
+    description: pageDescription,
+    author: { '@type': 'Person', name: config.author.name },
+    publisher: { '@type': 'Organization', name: config.siteName },
+    datePublished: '2026-04-29',
+    dateModified: '2026-04-29',
+    mainEntityOfPage: `${config.domain}/mushroom-coffee-italia/`,
+    image: `${config.domain}${bannerImage}`,
+  })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+  })} />
+
+  <BlogHero
+    title={pageTitle}
+    description="Se cerchi “mushroom coffee” dall’Italia, probabilmente stai usando il termine inglese perché la categoria nasce fuori dal mercato italiano. Qui traduciamo l’intenzione: cosa significa, cosa cambia rispetto a “caffè ai funghi” e quali marche europee vale la pena valutare."
+    author={config.author.name}
+    authorAvatar={config.author.avatar}
+    date="29 aprile 2026"
+    readingTime="11 min di lettura"
+    breadcrumbs={[{ label: 'Caffè ai funghi', href: '/' }, { label: 'Mushroom coffee Italia', href: '/mushroom-coffee-italia/' }]}
+    bannerImage={bannerImage}
+    product={{ name: topProduct.name, image: topProduct.image, promoCode: topProduct.promoCode, promoPercent: topProduct.promoPercent, originalPrice: topProduct.originalPrice, discountPrice: topProduct.discountPrice, affiliateLink: topProduct.affiliateLink }}
+    heroButton={{ text: 'Leggi la guida', href: '#sintesi' }}
+    showOfferBlock={false}
+  />
+
+  <main style="background-color:#ffffff;">
+    <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
+      <div class="content-column">
+        <section id="sintesi">
+          <FirstReview
+            tag="In breve"
+            heading="Mushroom coffee in Italia: query inglese, scelta italiana"
+            paragraphs={[
+              'Chi cerca “mushroom coffee” dall’Italia non cerca necessariamente un prodotto americano. Cerca una categoria: bevande calde con funghi funzionali, gusto tostato o base caffè, promessa di energia più stabile e routine meno aggressiva del caffè classico.',
+              'La traduzione naturale è “caffè ai funghi”, ma il mercato italiano è ancora giovane. Per questo ha senso partire dalle marche europee disponibili online, verificare se il prodotto è un vero coffee blend o una alternativa al caffè, e poi confrontare prezzo, ingredienti, caffeina e spedizione in Italia.'
+            ]}
+            assets={[
+              'Definizione chiara di mushroom coffee per utenti italiani',
+              'Differenza tra caffè ai funghi, alternative al caffè e bevande funzionali',
+              'Panoramica delle marche acquistabili online in Europa',
+              'Rinvio al comparativo italiano per scegliere rapidamente'
+            ]}
+            considerations={[
+              'Molti prodotti non imitano l’espresso italiano: sono routine funzionali',
+              'La presenza di caffeina cambia molto secondo formula e brand',
+              'Meglio comprare da siti ufficiali o link verificati per evitare coupon non validi'
+            ]}
+            product={{ brandName: topProduct.brand, brandLogoSrc: topProduct.brandLogo, rating: topProduct.rating, reviewLabel: 'Scelta consigliata per l’Italia', ctaText: 'Vedi offerta', ctaLink: topProduct.affiliateLink }}
+          />
+        </section>
+
+        <TableOfContents items={tocItems} />
+
+        <div class="template-promo-block">
+          <ReviewPromoCard product={topProduct} />
+        </div>
+
+        <section id="definizione" class="rich-text seo-guide">
+          <h2>Che cos’è il mushroom coffee?</h2>
+          <p><strong>Mushroom coffee</strong> significa letteralmente caffè ai funghi, ma nella pratica indica una famiglia di bevande funzionali. Alcune contengono vero caffè miscelato con estratti di funghi; altre hanno un gusto tostato simile al caffè, ma usano cacao, orzo, cicoria, spezie o ingredienti adattogeni per creare una routine più morbida.</p>
+          <p>I funghi più citati sono Lion’s Mane, Reishi, Cordyceps e Chaga. Il Lion’s Mane viene comunicato soprattutto per focus e chiarezza mentale, il Cordyceps per energia e performance, il Reishi per equilibrio e recupero, il Chaga per il profilo antiossidante. Queste associazioni non devono diventare promesse mediche: servono a capire il posizionamento dei prodotti, non a sostituire un consiglio sanitario.</p>
+          <p>La categoria è nata e cresciuta molto nei mercati anglofoni. Ecco perché anche un utente italiano può digitare “mushroom coffee” invece di “caffè ai funghi”: ha visto un contenuto su TikTok, YouTube, Reddit, Amazon o una marca europea che usa direttamente il termine inglese.</p>
+        </section>
+
+        <section id="caffe-ai-funghi" class="rich-text seo-guide">
+          <h2>Mushroom coffee vs caffè ai funghi: la differenza utile</h2>
+          <p>In italiano, “caffè ai funghi” suona più letterale e può creare confusione. Non significa mettere funghi da cucina dentro un espresso. Si parla di estratti funzionali in polvere, spesso integrati in una bevanda calda. La differenza principale non è linguistica, ma commerciale: il termine inglese è più internazionale e trend, il termine italiano è più chiaro per chi vuole comprare davvero in Italia.</p>
+          <p>Un prodotto può chiamarsi mushroom coffee anche se non assomiglia a un espresso. Può essere più vicino a una bevanda cacao-orzo, a un latte funzionale o a un “not coffee”. Per questo, quando si sceglie, bisogna guardare la formula: base caffè sì/no, caffeina sì/no, funghi presenti, dosi, gusto, prezzo per tazza e disponibilità in Italia.</p>
+        </section>
+
+        <InnerNote emoji="📌" text="Il punto non è scegliere il nome più corretto, ma capire cosa stai comprando: vero caffè con funghi, alternativa al caffè o bevanda funzionale ispirata al mushroom coffee." />
+
+        <section id="mercato-italia" class="rich-text seo-guide">
+          <h2>Stato del mercato in Italia</h2>
+          <p>Il mercato italiano del mushroom coffee è ancora piccolo rispetto a Stati Uniti, Regno Unito, Germania o Francia. L’Italia ha una cultura del caffè molto forte: espresso, moka, cappuccino e bar restano riferimenti emotivi e quotidiani. Questo rende la categoria più difficile, ma anche interessante: chi cerca mushroom coffee è spesso già più aperto a wellness, biohacking, integratori naturali o riduzione della caffeina.</p>
+          <p>Oggi l’offerta in Italia è soprattutto online. Le marche più visibili arrivano dall’Europa, spediscono in più paesi e usano siti ufficiali, marketplace o sistemi di coupon. Il vantaggio è che puoi confrontare formule e prezzi senza aspettare che la categoria diventi mainstream nei supermercati. Lo svantaggio è che bisogna filtrare molto marketing: “funzionale”, “energia naturale” o “focus” non bastano per giudicare un prodotto.</p>
+          <p>Per LMC, questa pagina serve da ponte: intercetta l’intenzione inglese “mushroom coffee” e porta l’utente verso la selezione italiana, dove il confronto è più utile per comprare.</p>
+        </section>
+
+        <ComparisonTable title="Come leggere il mercato italiano" headers={[{label:'Situazione'}, {label:'Cosa significa per l’acquisto'}]} rows={[
+          { cells: ['<span class="table-fit">🇮🇹 Categoria ancora giovane</span><span class="table-muted"> Poche marche native italiane molto forti</span>', 'Conviene guardare brand europei affidabili che spediscono in Italia'], highlight: true },
+          { cells: ['<span class="table-fit">☕ Cultura espresso dominante</span><span class="table-muted"> Aspettative di gusto molto alte</span>', 'Non aspettarti sempre un gusto da bar: valuta la routine completa'] },
+          { cells: ['<span class="table-fit">🌍 Query spesso in inglese</span><span class="table-muted"> Trend importato da contenuti internazionali</span>', 'Cerca anche “caffè ai funghi” per trovare comparativi italiani'] },
+          { cells: ['<span class="table-fit">🛒 Acquisto soprattutto online</span><span class="table-muted"> Brand ufficiali, coupon, spedizione europea</span>', 'Verifica prezzo finale, consegna, resi e codice promo'] },
+        ]} />
+
+        <section id="acquistare" class="rich-text seo-guide">
+          <h2>Dove comprare mushroom coffee online dall’Italia</h2>
+          <p>La soluzione più pulita è partire dai siti ufficiali o dai link verificati dei brand. In una categoria giovane, questo riduce il rischio di prodotti copiati, vecchi stock, coupon non funzionanti o descrizioni incomplete. Un sito ufficiale permette anche di leggere meglio ingredienti, dosaggi, eventuale presenza di caffeina, modalità di preparazione e condizioni di spedizione.</p>
+          <p>I marketplace possono essere utili per scoprire il mercato, ma non sono sempre ideali per scegliere il prodotto migliore. La scheda può essere tradotta male, il prezzo può cambiare, e non sempre il venditore spiega se il prodotto è una vera miscela di caffè o una alternativa funzionale. Per questo il nostro consiglio è semplice: usa i marketplace per orientarti, ma valuta l’acquisto finale su brand e comparativi affidabili.</p>
+        </section>
+
+        <div class="template-promo-block">
+          <ReviewPromoCard product={topProduct} />
+        </div>
+
+        <section id="marche-europa" class="rich-text seo-guide">
+          <h2>Marche disponibili in Europa da considerare</h2>
+          <p>Per il mercato italiano, la selezione più sensata non è solo “quale marca è famosa su internet”. Conta anche la disponibilità europea, la chiarezza della formula, la spedizione, il prezzo dopo coupon e la coerenza con l’intenzione mushroom coffee. Alcune marche sono più vicine agli estratti di funghi; altre sono più vicine alla sostituzione del caffè.</p>
+        </section>
+
+        <ComparisonTable title="Marche europee e profilo d’uso" headers={[{label:'Marca'}, {label:'Perché guardarla'}]} rows={[
+          { cells: ['<span class="table-fit">🍄 French Mush</span><span class="table-muted"> Partner principale per l’Italia</span>', productLink('French Mush', 'Miglior fit caffè ai funghi')], highlight: true },
+          { cells: ['<span class="table-fit">☕ Bonjour Drink</span><span class="table-muted"> Routine morbida, alternativa semplice</span>', productLink('Bonjour Drink', 'Buona scelta per iniziare') ] },
+          { cells: ['<span class="table-fit">🌿 Clearly Not Coffee</span><span class="table-muted"> Posizionamento “not coffee” molto chiaro</span>', productLink('Clearly', 'Alternativa moderna al caffè') ] },
+          { cells: ['<span class="table-fit">🧠 Mush N Go</span><span class="table-muted"> Formula più focus/adattogeni</span>', productLink('Mush N Go', 'Più tecnico e orientato focus') ] },
+          { cells: ['<span class="table-fit">⚡ Drink Dyna</span><span class="table-muted"> Super coffee accessibile</span>', productLink('Drink Dyna', 'Opzione pratica da confrontare') ] },
+          { cells: ['<span class="table-fit">🔎 Upraising</span><span class="table-muted"> Più vicino al mushroom coffee internazionale</span>', productLink('Upraising', 'Profilo internazionale') ] },
+        ]} />
+
+        <section id="scegliere" class="rich-text seo-guide">
+          <h2>Come scegliere un buon prodotto</h2>
+          <h3>1. Capire se contiene vero caffè</h3>
+          <p>Il primo criterio è la base. Se vuoi ridurre caffeina, nervosismo o acidità, un prodotto con vero caffè potrebbe non risolvere il problema. Se invece vuoi mantenere una sensazione più vicina al caffè classico, una formula con caffè o gusto tostato può essere più soddisfacente. Non comprare solo perché la confezione dice “mushroom coffee”: leggi la base della formula.</p>
+          <h3>2. Guardare quali funghi sono presenti</h3>
+          <p>Lion’s Mane, Reishi, Cordyceps e Chaga non comunicano la stessa cosa. Una formula focus non è identica a una formula relax o energia. Se il prodotto cita funghi ma non spiega bene ingredienti e dosaggi, meglio essere prudenti. La chiarezza è un segnale di qualità commerciale.</p>
+          <h3>3. Valutare gusto e ripetibilità</h3>
+          <p>Un prodotto eccellente sulla carta non serve se non riesci a berlo tre volte a settimana. Il mushroom coffee è una routine, non un acquisto da scaffale. Guarda preparazione, texture, possibilità di usarlo con latte o bevanda vegetale, zuccheri, dolcificanti e recensioni sul gusto.</p>
+          <h3>4. Calcolare il prezzo per tazza</h3>
+          <p>Il prezzo del barattolo non basta. Conta quante porzioni reali contiene, quale dose è consigliata e se il codice promo cambia davvero il costo finale. In questa categoria, un prodotto più caro può essere corretto se è più coerente, ma il marketing non deve giustificare tutto.</p>
+        </section>
+
+        <section id="errori" class="rich-text seo-guide">
+          <h2>Errori da evitare prima dell’acquisto</h2>
+          <p>Il primo errore è scegliere solo in base al nome inglese. “Mushroom coffee” suona più premium, ma non garantisce una formula migliore. Due prodotti con lo stesso nome possono avere logiche opposte: uno contiene caffè e funghi, l’altro è una bevanda senza caffeina con cacao, orzo o cicoria. Se l’obiettivo è ridurre il caffè, questo dettaglio cambia tutto.</p>
+          <p>Il secondo errore è ignorare la spedizione in Italia. Alcuni brand europei sembrano interessanti, ma il prezzo finale cambia con consegna, resi, bundle o abbonamento. Un buon prodotto deve essere comprensibile anche al checkout: prezzo chiaro, codice promo chiaro, quantità chiara e nessuna ambiguità sulla consegna.</p>
+          <p>Il terzo errore è aspettarsi un effetto immediato da bevanda energetica. Molte formule sono pensate per una routine progressiva: si giudicano su digestione, energia stabile, gusto, sonno e facilità d’uso. Se dopo due tazze il prodotto non sembra “potente”, non significa automaticamente che sia inutile; può semplicemente essere più morbido di un espresso.</p>
+          <p>Ultimo punto: attenzione alle promesse troppo forti. Una marca seria spiega ingredienti e uso quotidiano, non vende soluzioni miracolose. Per questo nel comparativo italiano diamo più peso a coerenza, disponibilità e fiducia che a slogan generici.</p>
+        </section>
+
+        <section id="alternative-caffe" class="rich-text seo-guide">
+          <h2>Perché alcuni prodotti sono più alternative al caffè che veri caffè</h2>
+          <p>Molte marche non cercano di copiare un espresso. Cercano di sostituire il momento: tazza calda, rituale mattutino, gusto tostato, energia più stabile e meno dipendenza dalla caffeina. Questo spiega perché alcuni prodotti usano cacao, orzo, cicoria o spezie invece di una base di caffè tradizionale.</p>
+          <p>Non è per forza un difetto. Se il tuo problema è bere troppo caffè, avere acidità o sentirti nervoso, una alternativa può essere più utile di un vero caffè con funghi aggiunti. Al contrario, se ami l’intensità dell’espresso e vuoi solo aggiungere funghi funzionali, devi scegliere una formula più vicina al coffee blend.</p>
+          <p>La buona domanda è quindi: vuoi un <strong>mushroom coffee</strong> nel senso internazionale del termine, o vuoi una <strong>alternativa al caffè</strong> più morbida? Le due strade possono portare a prodotti diversi.</p>
+        </section>
+
+        <section id="comparativo" class="rich-text seo-guide final-bridge">
+          <h2>Prossimo step: vedere il comparativo italiano</h2>
+          <p>Se vuoi passare dalla definizione all’acquisto, il passaggio più utile è il comparativo principale italiano. Lì trovi ranking, prodotti, prezzi, coupon, pro/contro e profili d’uso. Per noi, <strong>French Mush</strong> resta la prima opzione da mettere in avanti per l’Italia perché combina disponibilità online, coerenza con i funghi funzionali e proposta commerciale chiara.</p>
+          <p><a class="primary-inline-cta" href="/">Vedi il comparativo caffè ai funghi in Italia</a></p>
+        </section>
+
+        <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
+      </div>
+      <aside class="sidebar-column"><div class="sidebar-sticky"><SidebarCTA logoSrc={topProduct.brandLogo}
+              productName={topProduct.name}
+              brandName={topProduct.brand} promoCode={topProduct.promoCode} promoPercent={topProduct.promoPercent} originalPrice={topProduct.originalPrice} discountPrice={topProduct.discountPrice} ctaLink={topProduct.affiliateLink} heroImage={topProduct.image} rating={topProduct.rating} reviewCount={topProduct.reviewCount} /></div></aside>
+    </div></div></div>
+  </main>
+</BaseLayout>
+
+<style>
+  .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 2rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
+  .seo-guide p { margin-bottom: 1rem; line-height: 1.8; color: #444; }
+  .template-promo-block { margin: 1.25rem 0 1.75rem; }
+  .final-bridge { background: #f4f2ec; border: 0; border-radius: 1.25rem; padding: 2rem; }
+  .primary-inline-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: .75rem; padding: .9rem 1.25rem; border-radius: 999px; background: #ef7a1a; color: white; font-weight: 700; text-decoration: none; }
+  .primary-inline-cta:hover { background: #d9650e; color: white; }
+  .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+</style>

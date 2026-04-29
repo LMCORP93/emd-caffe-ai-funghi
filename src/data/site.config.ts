@@ -251,6 +251,7 @@ const config: SiteConfig = {
   ],
   pages: [
     { type: 'comparatif', label: 'Comparativo', slug: '/' },
+    { type: 'blog', label: 'Mushroom coffee', slug: '/mushroom-coffee-italia/' },
     { type: 'blog', label: 'Controindicazioni', slug: '/caffe-ai-funghi-controindicazioni/' },
   ],
 };
