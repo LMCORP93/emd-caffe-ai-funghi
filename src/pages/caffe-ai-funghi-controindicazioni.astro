@@ -13,6 +13,7 @@ import config from '@/data/site.config';
 
 const topProduct = config.products[0];
 const contraindicationsBanner = '/images/content/caffe-ai-funghi-controindicazioni-banner.webp';
+const bodyToleranceImage = '/images/content/caffe-ai-funghi-corpo-tolleranza.webp';
 const pageTitle = 'Caffè ai funghi: controindicazioni, rischi e precauzioni';
 const pageDescription = 'Guida chiara sulle controindicazioni del caffè ai funghi: effetti collaterali, caffeina, gravidanza, farmaci, digestione e quando chiedere un parere medico.';
 
@@ -127,6 +128,10 @@ const productLink = (brand: string, label = brand) => {
 
         <TableOfContents items={tocItems} />
 
+        <div class="template-promo-block">
+          <ReviewPromoCard product={frenchMushProduct} />
+        </div>
+
         <section id="pericoloso" class="rich-text seo-guide">
           <h2>Il caffè ai funghi è pericoloso?</h2>
           <p>La risposta più onesta è: <strong>non di per sé, ma dipende da persona, formula e contesto</strong>. Un prodotto semplice, assunto in quantità moderata da un adulto sano, non ha lo stesso livello di rischio di una formula ricca di stimolanti presa da una persona sensibile, sotto trattamento o con una condizione medica. La categoria “caffè ai funghi” è ampia: alcune bevande sono quasi alternative al caffè, altre somigliano più a integratori funzionali in polvere.</p>
@@ -156,6 +161,15 @@ const productLink = (brand: string, label = brand) => {
           { cells: ['<span class="table-fit">🌿 Adulto sano e curioso</span><span class="table-muted"> Nessun problema noto</span>', 'Inizia con dose bassa e osserva 7-14 giorni'] },
           { cells: ['<span class="table-fit">🧠 Obiettivo focus</span><span class="table-muted"> Interesse per Lion’s Mane o Cordyceps</span>', 'Evita di sommare troppi stimolanti nella stessa giornata'] },
         ]} />
+
+        <figure class="body-image-card">
+          <img src={bodyToleranceImage} alt="Persona che tiene una tazza di caffè ai funghi vicino al corpo per valutare tolleranza e sensibilità" loading="lazy" decoding="async" />
+          <figcaption>La tolleranza si valuta sul corpo: digestione, nervosismo, energia e sonno contano più delle promesse marketing.</figcaption>
+        </figure>
+
+        <div class="template-promo-block">
+          <ReviewPromoCard product={frenchMushProduct} />
+        </div>
 
         <section id="gravidanza" class="rich-text seo-guide">
           <h2>Gravidanza e allattamento</h2>
@@ -199,7 +213,9 @@ const productLink = (brand: string, label = brand) => {
           <h2>La raccomandazione principale per l’Italia</h2>
           <p><strong>French Mush</strong> è il prodotto da mettere avanti su questa pagina perché è il partner principale che vende in Italia e resta il più coerente con l’intenzione “caffè ai funghi”. La raccomandazione resta prudente: leggere ingredienti, controllare caffeina e iniziare progressivamente, soprattutto in caso di sensibilità o trattamenti.</p>
         </section>
-        <ReviewPromoCard product={frenchMushProduct} />
+        <div class="template-promo-block">
+          <ReviewPromoCard product={frenchMushProduct} />
+        </div>
 
         <section id="scelte" class="rich-text seo-guide">
           <h2>Quali opzioni scegliere se vuoi restare prudente</h2>
@@ -241,5 +257,9 @@ const productLink = (brand: string, label = brand) => {
   .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
   .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 2rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
   .seo-guide p { margin-bottom: 1rem; line-height: 1.8; color: #444; }
+  .template-promo-block { margin: 1.25rem 0 1.75rem; }
+  .body-image-card { margin: 2rem 0 1.75rem; border-radius: 1.25rem; overflow: hidden; background: #f4f2ec; box-shadow: 0 18px 45px rgba(36,36,36,.08); }
+  .body-image-card img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .body-image-card figcaption { margin: 0; padding: .85rem 1rem 1rem; color: #5f5a52; font-size: .95rem; line-height: 1.55; }
   .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
 </style>
