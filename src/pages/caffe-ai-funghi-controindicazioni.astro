@@ -1,0 +1,245 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHero from '@/components/BlogHero.astro';
+import FirstReview from '@/components/FirstReview.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import ComparatorCard from '@/components/ComparatorCard.astro';
+import SidebarCTA from '@/components/SidebarCTA.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import ComparisonTable from '@/components/ComparisonTable.astro';
+import InnerNote from '@/components/InnerNote.astro';
+import config from '@/data/site.config';
+
+const topProduct = config.products[0];
+const pageTitle = 'Caffè ai funghi: controindicazioni, rischi e precauzioni';
+const pageDescription = 'Guida chiara sulle controindicazioni del caffè ai funghi: effetti collaterali, caffeina, gravidanza, farmaci, digestione e quando chiedere un parere medico.';
+
+const tocItems = [
+  { id: 'sintesi', label: 'Sintesi' },
+  { id: 'pericoloso', label: 'È pericoloso?' },
+  { id: 'effetti-collaterali', label: 'Effetti possibili' },
+  { id: 'caffeina', label: 'Caffeina' },
+  { id: 'gravidanza', label: 'Gravidanza' },
+  { id: 'farmaci', label: 'Farmaci' },
+  { id: 'digestione', label: 'Digestione' },
+  { id: 'funghi-funzionali', label: 'Funghi' },
+  { id: 'iniziare', label: 'Come iniziare' },
+  { id: 'scelte', label: 'Scelte prudenti' },
+  { id: 'medico', label: 'Quando chiedere' },
+  { id: 'faq', label: 'FAQ' },
+];
+
+const cautiousProducts = [
+  {
+    ...config.products.find((item) => item.brand === 'Bonjour Drink')!,
+    rank: 1,
+    description: 'Bonjour Drink è la scelta più prudente per chi arriva su questa pagina perché vuole ridurre caffeina, nervosismo o acidità senza entrare subito in formule troppo tecniche. Il suo interesse non è promettere un effetto forte, ma offrire una bevanda più morbida, facile da preparare e più leggibile per una routine quotidiana.\n\nIn un contesto di controindicazioni, la semplicità conta: meno stimolazione percepita, gusto più accessibile e uso facile da interrompere se non ti convince. Resta comunque necessario controllare etichetta, ingredienti e tolleranza personale, soprattutto in caso di farmaci, gravidanza o sensibilità digestiva.'
+  },
+  {
+    ...config.products.find((item) => item.brand === 'Clearly')!,
+    rank: 2,
+    description: 'Clearly Not Coffee è interessante per chi vuole uscire dalla logica del caffè classico. Il posizionamento “Not Coffee” aiuta a capire subito l’obiettivo: mantenere una bevanda funzionale senza cercare per forza lo stimolo di un espresso.\n\nLo mettiamo secondo su questa pagina perché può essere una buona opzione per chi vuole ridurre il caffè, ma non vuole passare a una formula troppo performance. Anche qui, la regola resta la stessa: verificare ingredienti, presenza di stimolanti e reazione personale nei primi giorni.'
+  },
+  {
+    ...config.products.find((item) => item.brand === 'French Mush')!,
+    rank: 3,
+    description: 'French Mush resta la scelta più coerente se l’obiettivo è provare un vero prodotto centrato sui funghi funzionali. Su una pagina dedicata alle precauzioni, però, lo presentiamo dopo le alternative più semplici perché la formula è più tecnica e richiede un minimo di attenzione agli estratti, al momento di assunzione e alla tolleranza individuale.\n\nÈ una buona opzione per chi vuole una routine più funzionale, ma non dovrebbe essere scelta alla cieca: se assumi farmaci, hai una patologia cronica o sei molto sensibile agli integratori, meglio chiedere un parere professionale prima di iniziare.'
+  }
+];
+
+const faq = [
+  { question: 'Il caffè ai funghi è pericoloso?', answer: 'Per un adulto sano, un uso moderato può essere ben tollerato. Non è però una bevanda neutra per tutti: bisogna controllare caffeina, estratti di funghi, adattogeni, farmaci assunti e sensibilità digestiva personale.' },
+  { question: 'Quali sono gli effetti collaterali possibili?', answer: 'Gli effetti possibili includono fastidio digestivo, nausea, gonfiore, mal di testa, nervosismo se c’è caffeina, sonno disturbato o reazioni individuali agli estratti. In caso di sintomi persistenti, meglio interrompere e chiedere consiglio.' },
+  { question: 'Si può bere caffè ai funghi in gravidanza?', answer: 'In gravidanza o allattamento è meglio evitare l’autosperimentazione con formule funzionali e chiedere un parere medico. Il problema non è solo il fungo, ma la combinazione di estratti, caffeina, piante e dosaggi.' },
+  { question: 'Il caffè ai funghi contiene caffeina?', answer: 'Dipende dal prodotto. Alcune formule sono alternative al caffè e non contengono caffeina classica; altre includono caffè, tè, matcha o stimolanti. La sola parola “funghi” non significa automaticamente senza caffeina.' },
+  { question: 'Chi dovrebbe chiedere un parere medico prima di provarlo?', answer: 'Persone in gravidanza o allattamento, chi assume farmaci, chi ha patologie croniche, malattie autoimmuni, disturbi epatici o renali, allergie ai funghi, forte sensibilità digestiva o reazioni frequenti agli integratori.' },
+  { question: 'Come iniziare in modo prudente?', answer: 'Scegli una formula semplice, leggibile e preferibilmente non troppo stimolante. Inizia con mezza dose o una dose bassa, al mattino, per alcuni giorni. Non introdurre altri integratori nello stesso periodo, così capisci meglio la tua tolleranza.' },
+];
+
+const productLink = (brand: string, label = brand) => {
+  const product = config.products.find((item) => item.brand === brand);
+  const href = product?.affiliateLink && product.affiliateLink !== '#' ? product.affiliateLink : `/#product-${product?.slug ?? ''}`;
+  const rel = href.startsWith('/') || href.startsWith('#') ? '' : ' rel="nofollow sponsored" target="_blank"';
+  return `<a class="table-link" href="${href}"${rel}>${label}</a>`;
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: config.domain },
+      { '@type': 'ListItem', position: 2, name: 'Caffè ai funghi controindicazioni', item: `${config.domain}/caffe-ai-funghi-controindicazioni/` },
+    ],
+  })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageTitle,
+    description: pageDescription,
+    author: { '@type': 'Person', name: config.author.name },
+    publisher: { '@type': 'Organization', name: config.siteName },
+    datePublished: '2026-04-29',
+    dateModified: '2026-04-29',
+    mainEntityOfPage: `${config.domain}/caffe-ai-funghi-controindicazioni/`,
+    image: `${config.domain}/images/content/emd-cafe-champignons-banner.webp`,
+  })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+  })} />
+
+  <BlogHero
+    title={pageTitle}
+    description="Il caffè ai funghi non va demonizzato, ma nemmeno trattato come una bevanda magica. Qui trovi i rischi realistici, le situazioni in cui serve prudenza e il modo più sensato per provarlo senza esagerare."
+    author={config.author.name}
+    authorAvatar={config.author.avatar}
+    date="29 aprile 2026"
+    readingTime="12 min di lettura"
+    breadcrumbs={[{ label: 'Caffè ai funghi', href: '/' }, { label: 'Controindicazioni', href: '/caffe-ai-funghi-controindicazioni/' }]}
+    bannerImage="/images/content/emd-cafe-champignons-banner.webp"
+    product={{ name: topProduct.name, image: topProduct.image, promoCode: topProduct.promoCode, promoPercent: topProduct.promoPercent, originalPrice: topProduct.originalPrice, discountPrice: topProduct.discountPrice, affiliateLink: topProduct.affiliateLink }}
+    heroButton={{ text: 'Vedi le opzioni prudenti', href: '#scelte' }}
+    showOfferBlock={false}
+  />
+
+  <main style="background-color:#ffffff;">
+    <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
+      <div class="content-column">
+        <div id="sintesi">
+          <FirstReview
+            tag="In breve"
+            heading="Caffè ai funghi: prudenza sì, paura no"
+            paragraphs={[
+              'Il caffè ai funghi non è automaticamente pericoloso. Per molte persone adulte e sane può essere una bevanda funzionale interessante, soprattutto se aiuta a ridurre caffè classico, nervosismo o acidità. Il punto importante è non confondere “naturale” con “adatto a tutti”. Una formula può contenere caffeina, funghi funzionali, piante adattogene, cacao, orzo, matcha o altri ingredienti che non hanno lo stesso effetto su ogni persona.',
+              'La regola pratica è semplice: se sei in buona salute, scegli una formula chiara e inizia gradualmente. Se sei incinta, allatti, assumi farmaci, hai una patologia cronica, una malattia autoimmune, allergie ai funghi o una sensibilità digestiva forte, non improvvisare. In questi casi il caffè ai funghi va valutato con un professionista sanitario, non con una promessa vista online.'
+            ]}
+            assets={[
+              'Spiegazione realistica: non pericoloso per tutti, ma non neutro per tutti',
+              'Focus su caffeina, farmaci, gravidanza, digestione e funghi funzionali',
+              'Metodo semplice per iniziare con dosi basse e osservare la tolleranza',
+              'Opzioni più prudenti ordinate per profilo utente e semplicità della formula'
+            ]}
+            considerations={[
+              'Controllare sempre etichetta, caffeina e ingredienti prima dell’acquisto',
+              'Evitare promesse mediche: il caffè ai funghi non è una soluzione sanitaria',
+              'Chiedere parere medico in caso di dubbi personali, farmaci o gravidanza'
+            ]}
+            product={{ brandName: topProduct.brand, brandLogoSrc: topProduct.brandLogo, rating: topProduct.rating, reviewLabel: 'Scelta del comparativo', ctaText: 'Vedi offerta', ctaLink: topProduct.affiliateLink }}
+          />
+        </div>
+
+        <TableOfContents items={tocItems} />
+
+        <section id="pericoloso" class="rich-text seo-guide">
+          <h2>Il caffè ai funghi è pericoloso?</h2>
+          <p>La risposta più onesta è: <strong>non di per sé, ma dipende da persona, formula e contesto</strong>. Un prodotto semplice, assunto in quantità moderata da un adulto sano, non ha lo stesso livello di rischio di una formula ricca di stimolanti presa da una persona sensibile, sotto trattamento o con una condizione medica. La categoria “caffè ai funghi” è ampia: alcune bevande sono quasi alternative al caffè, altre somigliano più a integratori funzionali in polvere.</p>
+          <p>Il rischio principale nasce spesso dall’aspettativa. Se una persona pensa “è naturale, quindi posso prenderlo senza guardare nulla”, sbaglia. I funghi funzionali come Lion’s Mane, Reishi, Cordyceps o Chaga possono essere ben tollerati, ma restano estratti concentrati. In più, molte formule aggiungono ingredienti tostati, cacao, piante, dolcificanti o caffeina. La prudenza non significa paura: significa leggere l’etichetta e partire da una dose ragionevole.</p>
+          <p>La seconda distinzione importante riguarda lo scopo. Se usi il caffè ai funghi per sostituire due o tre espressi al giorno, potresti notare un miglioramento semplicemente perché riduci la caffeina. Se invece aggiungi una bevanda funzionale sopra una routine già piena di caffè, integratori e stimolanti, il rischio di fastidi aumenta. L’approccio più intelligente è sostituire, non accumulare.</p>
+        </section>
+
+        <InnerNote emoji="📌" text="La domanda giusta non è “il caffè ai funghi è buono o cattivo?”, ma “questa formula è adatta alla mia situazione, alla mia tolleranza e al mio livello di caffeina?”" />
+
+        <section id="effetti-collaterali" class="rich-text seo-guide">
+          <h2>Effetti collaterali possibili</h2>
+          <p>Gli effetti indesiderati più probabili sono digestivi o legati alla stimolazione. Alcune persone possono sentire gonfiore, nausea leggera, crampi, feci diverse dal solito o fastidio gastrico. Questo può dipendere dai funghi, dalla fibra, dal cacao, dai dolcificanti, dall’orzo, dalla cicoria o semplicemente dal fatto che il corpo non è abituato a quella miscela.</p>
+          <p>Se il prodotto contiene caffeina, tè, matcha, guaranà o altri stimolanti, possono comparire nervosismo, battito accelerato, mal di testa, irritabilità o sonno più leggero. Non è una particolarità dei funghi: è spesso il risultato della dose totale di stimolanti nella giornata. Un caffè ai funghi preso dopo due espressi non avrà lo stesso effetto di una tazza usata al posto del primo caffè.</p>
+          <p>Esistono anche reazioni individuali più specifiche: prurito, eruzioni cutanee, sensazione di malessere o reazioni allergiche in persone sensibili ai funghi o ad altri ingredienti della formula. Sono situazioni meno comuni, ma vanno prese sul serio. Se un sintomo compare subito dopo l’assunzione e si ripete, la scelta più prudente è interrompere e chiedere un parere.</p>
+        </section>
+
+        <section id="caffeina" class="rich-text seo-guide">
+          <h2>Caffeina o senza caffeina: il punto più importante</h2>
+          <p>Molte persone cercano caffè ai funghi pensando automaticamente a una bevanda più leggera del caffè. Non è sempre vero. Alcuni prodotti contengono ancora caffè, caffè solubile, tè verde, matcha o guaranà. Altri sono vere alternative senza caffeina classica, basate su cacao, orzo tostato, cicoria o mix funzionali. Prima di comprare, bisogna verificare la presenza di caffeina e il momento in cui vuoi bere la tazza.</p>
+          <p>Se sei sensibile alla caffeina, evita di ragionare solo con il nome commerciale. Cerca parole come “coffee”, “café”, “matcha”, “green tea”, “guarana”, “yerba mate” o dosaggi di caffeina. Se vuoi una bevanda da pomeriggio o sera, una formula senza caffeina classica è più prudente. Se invece vuoi sostituire il primo espresso del mattino, una piccola quota di caffeina può essere accettabile, ma deve rimanere coerente con la tua tolleranza.</p>
+        </section>
+
+        <ComparisonTable title="Situazione e livello di prudenza" headers={[{label:'Profilo'}, {label:'Approccio consigliato'}]} rows={[
+          { cells: ['<span class="table-fit">☕ Sensibile alla caffeina</span><span class="table-muted"> Nervosismo, palpitazioni, sonno leggero</span>', 'Scegli formule senza caffeina classica e usa solo al mattino'], highlight: true },
+          { cells: ['<span class="table-fit">🤰 Gravidanza o allattamento</span><span class="table-muted"> Situazione da non improvvisare</span>', 'Chiedi parere medico prima di provare'] },
+          { cells: ['<span class="table-fit">💊 Farmaci o patologie</span><span class="table-muted"> Possibili interazioni o sensibilità individuale</span>', 'Valuta con medico o farmacista'] },
+          { cells: ['<span class="table-fit">🌿 Adulto sano e curioso</span><span class="table-muted"> Nessun problema noto</span>', 'Inizia con dose bassa e osserva 7-14 giorni'] },
+          { cells: ['<span class="table-fit">🧠 Obiettivo focus</span><span class="table-muted"> Interesse per Lion’s Mane o Cordyceps</span>', 'Evita di sommare troppi stimolanti nella stessa giornata'] },
+        ]} />
+
+        <section id="gravidanza" class="rich-text seo-guide">
+          <h2>Gravidanza e allattamento</h2>
+          <p>Durante gravidanza e allattamento, la raccomandazione è chiara: <strong>meglio non iniziare da sola una formula funzionale nuova</strong>. Il problema non è solo la caffeina. È la combinazione di estratti di funghi, piante, dosaggi, dolcificanti e sensibilità individuale in un periodo in cui conviene ridurre l’incertezza.</p>
+          <p>Alcuni prodotti possono sembrare innocui perché sono venduti come bevande, non come integratori. Ma se contengono Reishi, Cordyceps, Chaga, Lion’s Mane, adattogeni o altri estratti, la prudenza aumenta. Non serve allarmismo: serve semplicemente un parere di chi conosce la tua situazione, il tuo stato di salute, eventuali analisi e la quantità totale di caffeina nella giornata.</p>
+        </section>
+
+        <section id="farmaci" class="rich-text seo-guide">
+          <h2>Farmaci, patologie e situazioni da valutare</h2>
+          <p>Se assumi farmaci ogni giorno, il caffè ai funghi non dovrebbe essere aggiunto con leggerezza. La prudenza è particolarmente importante in caso di anticoagulanti, immunosoppressori, farmaci per pressione, glicemia, tiroide, ansia, sonno o patologie croniche. Non significa che ogni combinazione sia vietata; significa che non ha senso decidere da soli sulla base di una pagina commerciale.</p>
+          <p>Le persone con malattie autoimmuni dovrebbero essere caute con prodotti che comunicano su “immunità” o funghi funzionali. Chi ha problemi epatici o renali dovrebbe evitare formule complesse senza parere medico. Chi ha allergie note ai funghi, muffe o ingredienti specifici deve leggere con attenzione la composizione e interrompere se compaiono segnali anomali.</p>
+          <p>Un farmacista può spesso aiutare rapidamente: basta portare la lista degli ingredienti, il dosaggio consigliato e la lista dei farmaci assunti. È molto più utile che cercare una risposta generica online, perché il rischio reale dipende dal tuo caso concreto.</p>
+        </section>
+
+        <section id="digestione" class="rich-text seo-guide">
+          <h2>Sensibilità digestiva: come evitare fastidi</h2>
+          <p>Una parte importante delle controindicazioni riguarda lo stomaco. Anche se una formula è senza caffeina, può dare fastidio se contiene fibre, cacao, dolcificanti, estratti concentrati o ingredienti tostati che non tolleri bene. Chi soffre di reflusso, colon irritabile, gastrite o forte sensibilità dovrebbe iniziare con una dose ridotta e non a stomaco completamente vuoto.</p>
+          <p>Il modo più semplice per testare la tolleranza è non cambiare troppe cose insieme. Non iniziare caffè ai funghi, magnesio, probiotici e una nuova dieta nella stessa settimana. Prova una sola bevanda, sempre nello stesso momento, e osserva gonfiore, acidità, transito, nausea e comfort dopo il pasto. Se la formula peggiora i sintomi, non forzare.</p>
+        </section>
+
+        <section id="funghi-funzionali" class="rich-text seo-guide">
+          <h2>Precauzioni sui principali funghi funzionali</h2>
+          <h3>Lion’s Mane</h3>
+          <p>Il Lion’s Mane è spesso scelto per concentrazione e chiarezza mentale. È interessante in una routine di lavoro, ma non va trattato come una garanzia di effetto cognitivo. Le persone sensibili agli integratori dovrebbero iniziare con dosi basse e valutare eventuali reazioni digestive o cutanee.</p>
+          <h3>Reishi</h3>
+          <p>Il Reishi è usato in molte formule orientate a equilibrio e recupero. Richiede prudenza in caso di farmaci, interventi programmati, problemi di coagulazione o condizioni mediche. Se la formula contiene Reishi e assumi trattamenti, meglio chiedere consiglio prima.</p>
+          <h3>Cordyceps</h3>
+          <p>Il Cordyceps viene spesso associato a energia e performance. Se sei già sensibile agli stimolanti o hai una routine ricca di caffeina, valuta bene la formula completa. L’obiettivo non deve essere aumentare tutto, ma trovare un livello di energia sostenibile.</p>
+          <h3>Chaga</h3>
+          <p>Il Chaga compare spesso per il suo profilo antiossidante. Anche qui, la presenza in etichetta non basta: contano estratto, dose, qualità e situazione personale. Se hai patologie renali, trattamenti o dubbi specifici, non improvvisare.</p>
+        </section>
+
+        <section id="iniziare" class="rich-text seo-guide">
+          <h2>Come iniziare in modo prudente</h2>
+          <p>Il metodo più pulito è una prova di <strong>7-14 giorni</strong>. Scegli una formula semplice, possibilmente con una lista ingredienti comprensibile, e usala al posto di una tazza di caffè, non in aggiunta. Se sei sensibile, parti da mezza dose per i primi due o tre giorni. Bevi la tazza al mattino o nella prima parte della giornata, soprattutto se non sei sicuro della presenza di caffeina.</p>
+          <p>Osserva quattro segnali: digestione, nervosismo, energia e sonno. Se la digestione peggiora, se ti senti troppo stimolato o se dormi peggio, riduci o interrompi. Se invece riesci a ridurre il caffè classico senza nervosismo e con una buona tolleranza, allora la bevanda può avere senso nella tua routine.</p>
+          <p>Evita l’errore classico: iniziare con il prodotto più potente perché sembra più efficace. Per molte persone la scelta migliore è quella più ripetibile. Una formula moderata, piacevole e ben tollerata vale più di una miscela impressionnante che finisce dimenticata dopo tre giorni.</p>
+        </section>
+
+        <section id="scelte" class="rich-text seo-guide">
+          <h2>Quali opzioni scegliere se vuoi restare prudente</h2>
+          <p>Su una pagina dedicata alle controindicazioni, il ranking cambia leggermente rispetto al comparativo principale. L’obiettivo non è trovare la formula più “forte”, ma la più sensata per chi vuole testare senza esagerare. Per questo mettiamo davanti le opzioni più semplici da capire e più orientate alla riduzione del caffè classico.</p>
+        </section>
+
+        <section class="comparatif-cards">
+          {cautiousProducts.map((product) => (
+            <div id={`product-${product.slug}`}><ComparatorCard product={product} /></div>
+          ))}
+        </section>
+
+        <section class="rich-text seo-guide">
+          <h2>Scelta rapida secondo il tuo caso</h2>
+        </section>
+        <ComparisonTable title="Prodotto e profilo prudente" headers={[{label:'Caso'}, {label:'Scelta più logica'}]} rows={[
+          { cells: ['<span class="table-fit">☕ Voglio ridurre caffè e nervosismo</span><span class="table-muted"> Transizione morbida</span>', productLink('Bonjour Drink', '✅ Bonjour Drink')], highlight: true },
+          { cells: ['<span class="table-fit">🚫 Voglio un vero “Not Coffee”</span><span class="table-muted"> Alternativa moderna al caffè</span>', productLink('Clearly', '✅ Clearly Not Coffee') ] },
+          { cells: ['<span class="table-fit">🍄 Voglio una formula più centrata sui funghi</span><span class="table-muted"> Più tecnica, da leggere bene</span>', productLink('French Mush', '✅ French Mush') ] },
+        ]} />
+
+        <section id="medico" class="rich-text seo-guide">
+          <h2>Quando chiedere un parere medico</h2>
+          <p>Chiedi un parere medico o farmacista se sei in gravidanza, allatti, assumi farmaci, hai una patologia cronica, una malattia autoimmune, problemi epatici o renali, allergie note, disturbi digestivi importanti o reazioni frequenti agli integratori. È consigliabile farlo anche se vuoi usare il prodotto ogni giorno per mesi, perché l’uso regolare merita più attenzione di una prova occasionale.</p>
+          <p>Consulta rapidamente se compaiono sintomi insoliti: rash, difficoltà respiratoria, gonfiore importante, dolore persistente, palpitazioni forti, insonnia marcata, nausea intensa o peggioramento netto di una condizione esistente. La soluzione non è cercare di “resistere” perché il prodotto è naturale. La soluzione è interrompere e capire se la formula è adatta a te.</p>
+          <p>Il verdetto pratico: il caffè ai funghi può essere una buona alternativa per ridurre il caffè classico, ma deve restare una scelta ragionata. La formula migliore è quella che capisci, tolleri e riesci a usare senza forzare il corpo.</p>
+        </section>
+
+        <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
+      </div>
+      <aside class="sidebar-column"><div class="sidebar-sticky"><SidebarCTA logoSrc={topProduct.brandLogo}
+              productName={topProduct.name}
+              brandName={topProduct.brand} promoCode={topProduct.promoCode} promoPercent={topProduct.promoPercent} originalPrice={topProduct.originalPrice} discountPrice={topProduct.discountPrice} ctaLink={topProduct.affiliateLink} heroImage={topProduct.image} rating={topProduct.rating} reviewCount={topProduct.reviewCount} /></div></aside>
+    </div></div></div>
+  </main>
+</BaseLayout>
+
+<style>
+  .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 2rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
+  .seo-guide p { margin-bottom: 1rem; line-height: 1.8; color: #444; }
+  .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+</style>

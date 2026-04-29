@@ -251,6 +251,7 @@ const config: SiteConfig = {
   ],
   pages: [
     { type: 'comparatif', label: 'Comparativo', slug: '/' },
+    { type: 'blog', label: 'Controindicazioni', slug: '/caffe-ai-funghi-controindicazioni/' },
   ],
 };
 
