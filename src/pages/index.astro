@@ -7,6 +7,7 @@ import SidebarCTA from '@/components/SidebarCTA.astro';
 import FAQSection from '@/components/FAQSection.astro';
 import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
+import FirstReview from '@/components/FirstReview.astro';
 import config from '@/data/site.config';
 
 const topProduct = config.products[0];
@@ -66,11 +67,34 @@ const productLink = (brand: string, label = brand) => {
   <main style="background-color:#ffffff;">
     <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
       <div class="content-column">
-        <section id="introduzione" class="rich-text">
-          <h2>Caffè ai funghi: il riassunto rapido</h2>
-          <p>Il <strong>caffè ai funghi</strong> è ancora una categoria giovane in Italia, ma l’intenzione di ricerca è già chiara. Le persone cercano una bevanda che mantenga il rituale del caffè, riduca nervosismo e acidità, e aggiunga un profilo funzionale con ingredienti come Lion’s Mane, Reishi, Cordyceps o Chaga. Il problema è che molte marche usano parole simili, ma non spiegano davvero quale prodotto conviene scegliere.</p>
-          <p>Per questo la prima pagina di <strong>caffe-ai-funghi.it</strong> parte da un comparativo netto. Non vogliamo creare una lista infinita, ma ordinare le sei opzioni più utili per LMC in questa fase: <strong>French Mush</strong>, <strong>Bonjour Drink</strong>, <strong>Clearly Not Coffee</strong>, <strong>Mush N Go</strong>, <strong>Drink Dyna</strong> e <strong>Upraising</strong>. Ogni prodotto risponde a un profilo diverso: estratti funzionali, alternativa dolce al caffè, Not Coffee moderno, formula concentrata, super coffee accessibile o mushroom coffee internazionale.</p>
-          <p>La nostra scelta numero uno è <strong>French Mush</strong>, perché ha il miglior fit con la query “caffè ai funghi”: è specializzata negli estratti, parla a un pubblico già curioso di funghi funzionali e ha una proposta più credibile di molte bevande generiche. <strong>Bonjour Drink</strong> è seconda perché è la scelta più facile per chi vuole iniziare. <strong>Clearly</strong> è terza perché risponde benissimo all’intenzione di ridurre il caffè classico senza perdere il rituale.</p>
+        <section id="introduzione">
+          <FirstReview
+            tag="In breve"
+            heading="Caffè ai funghi: guarda formula, rituale e tolleranza"
+            paragraphs={[
+              'Il caffè ai funghi è ancora una categoria giovane in Italia, ma l’intenzione di ricerca è già chiara: mantenere il rituale del caffè, ridurre nervosismo e acidità, e aggiungere ingredienti funzionali come Lion’s Mane, Reishi, Cordyceps o Chaga.',
+              'La nostra scelta numero uno è French Mush, perché ha il miglior fit con la query “caffè ai funghi”: marca specializzata, proposta credibile e lettura più chiara rispetto a molte bevande generiche. Bonjour Drink resta l’opzione più facile per iniziare, mentre Clearly è forte per chi vuole ridurre il caffè classico senza perdere il gesto quotidiano.',
+            ]}
+            assets={[
+              'French Mush primo per coerenza con funghi funzionali ed estratti',
+              'Top 6 ordinato per formula, gusto, prezzo e uso quotidiano',
+              'Bonjour Drink e Clearly coprono bene il bisogno di alternativa al caffè',
+              'Coupon e link affiliati verificati per ogni prodotto spinto',
+            ]}
+            considerations={[
+              'Il mercato italiano resta giovane e cambia velocemente',
+              'Non tutti i prodotti hanno il gusto di un espresso classico',
+              'Controllare sempre etichetta, caffeina e tolleranza personale',
+            ]}
+            product={{
+              brandName: topProduct.brand,
+              brandLogoSrc: topProduct.brandLogo,
+              rating: topProduct.rating,
+              reviewLabel: 'Miglior scelta del comparativo',
+              ctaText: 'Vedi l’offerta',
+              ctaLink: topProduct.affiliateLink,
+            }}
+          />
         </section>
 
         <TableOfContents items={config.tocItems} />
