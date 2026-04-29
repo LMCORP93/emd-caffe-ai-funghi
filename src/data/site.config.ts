@@ -48,7 +48,7 @@ const products: Product[] = [
       'Richiede un minimo di interesse per Lion’s Mane, Reishi, Cordyceps e Chaga',
       'Meno immediata per chi vuole solo una bevanda dolce da colazione'
     ],
-    description: 'French Mush prende il primo posto perché è la scelta più coerente per un EMD italiano sul caffè ai funghi. La marca è specializzata negli estratti funzionali e comunica in modo chiaro il valore della categoria: non solo gusto, ma anche routine, concentrazione e qualità degli ingredienti.\n\nLa consigliamo come prima opzione per chi vuole capire davvero cosa compra, senza cadere in promesse esagerate. È meno “caffè da bar” e più bevanda funzionale, ma proprio per questo si posiziona bene su una ricerca ancora giovane come caffè ai funghi.'
+    description: 'French Mush prende il primo posto perché è la scelta più coerente per un EMD italiano sul caffè ai funghi. Il brand è specializzato nei funghi funzionali e lavora su un territorio molto chiaro: estratti, routine quotidiana, energia più stabile e supporto alla concentrazione, senza cercare di sembrare un espresso tradizionale a tutti i costi.\n\nIl prodotto Boisson Boost è interessante perché mette al centro una logica da bevanda funzionale: si prepara facilmente, parla a chi conosce già Lion’s Mane, Reishi, Cordyceps o Chaga, e resta più credibile di molte alternative generiche che usano solo il trend “mushroom coffee”. È quindi una scelta forte per chi vuole davvero provare i funghi adattogeni in una routine mattutina.\n\nNel comparativo lo mettiamo davanti perché combina tre elementi importanti per l’Italia: un messaggio verticale, un prodotto facile da spiegare e un codice promo verificato. Il limite è che non va venduto come un caffè da bar: è prima di tutto una bevanda funzionale con un posizionamento premium.'
   },
   {
     rank: 2,
@@ -78,7 +78,7 @@ const products: Product[] = [
       'Meno tecnico di French Mush o Mush N Go sul lato funghi',
       'Il gusto resta quello di una bevanda funzionale tostato-cacao'
     ],
-    description: 'Bonjour Drink è il secondo prodotto perché risponde benissimo a un bisogno pratico: sostituire il caffè quotidiano con una bevanda più stabile e più dolce per lo stomaco. È probabilmente l’opzione più facile da consigliare a chi parte da zero e non vuole entrare subito nel mondo degli estratti puri.\n\nIl suo vantaggio è la semplicità. Si prepara velocemente, ha un gusto rassicurante e permette di conservare il rituale della tazza calda. Per l’Italia, dove il caffè è una routine forte, questa accessibilità è un punto decisivo.'
+    description: 'Bonjour Drink è il secondo prodotto perché risponde benissimo a un bisogno pratico: sostituire il caffè quotidiano con una bevanda più stabile, più morbida e più facile da tollerare. Il brand parla meno come un laboratorio di estratti e più come una alternativa semplice alla tazza del mattino, cosa molto utile per un pubblico italiano che non vuole complicarsi.\n\nIl prodotto Super Café è pensato per chi vuole mantenere il gesto della bevanda calda, ma ridurre nervosismo, acidità o dipendenza dal caffè classico. La formula ha un profilo più accessibile: gusto tostato, preparazione rapida, immagine rassicurante e promessa comprensibile anche per chi non conosce ancora i funghi funzionali.\n\nNel comparativo resta dietro French Mush perché è meno verticale sul tema “funghi”, ma può convertire molto bene come prima scoperta. È la scelta più facile da raccomandare a un principiante: meno tecnica, più lifestyle, con un prezzo leggibile dopo codice promo.'
   },
   {
     rank: 3,
@@ -108,7 +108,7 @@ const products: Product[] = [
       'Meno riconosciuta in Italia rispetto a brand locali o marketplace',
       'Non soddisfa chi vuole caffeina forte'
     ],
-    description: 'Clearly Not Coffee è terzo perché intercetta un’intenzione molto precisa: trovare una bevanda che sostituisca il caffè senza copiarlo. La promessa è semplice e comprensibile, meno nervosismo, meno acidità e una routine più leggera.\n\nÈ una buona scelta per chi non vuole studiare ogni singolo fungo adattogeno, ma vuole un’alternativa pronta e coerente. Nel comparativo resta dietro French Mush e Bonjour Drink perché è meno centrale sul concetto “funghi”, ma molto forte sull’uso quotidiano.'
+    description: 'Clearly Not Coffee è terzo perché intercetta un’intenzione molto precisa: trovare una bevanda che sostituisca il caffè senza copiarlo. Il brand assume chiaramente la promessa “Not Coffee”, quindi l’utente capisce subito cosa compra: una routine più leggera, meno nervosismo, meno acidità e un’alternativa moderna alla tazza classica.\n\nIl prodotto Not Coffee ha senso per chi non vuole studiare ogni singolo fungo adattogeno, ma cerca una soluzione pronta, pulita e coerente. Il valore non sta solo nella formula: sta anche nel posizionamento. Clearly vende una nuova abitudine, non un caffè finto, e questo può parlare a chi ha già deciso di ridurre la caffeina.\n\nNel comparativo resta dietro French Mush e Bonjour Drink perché è meno centrale sul concetto “funghi” e meno rassicurante per chi vuole una prima alternativa dolce. Però è molto forte sull’uso quotidiano: se l’obiettivo è cambiare rituale senza entrare in un registro troppo vicino al supplemento, Clearly è una delle opzioni più leggibili.'
   },
   {
     rank: 4,
@@ -138,7 +138,7 @@ const products: Product[] = [
       'Meno morbida come prima alternativa al caffè',
       'Il posizionamento è più performance che piacere da colazione'
     ],
-    description: 'Mush N Go è quarto, ma non perché sia debole. È semplicemente più tecnico. La formula parla a chi cerca concentrazione, ritmo di lavoro e supporto mentale, più che a chi vuole solo una bevanda calda al posto dell’espresso.\n\nPer questo lo mettiamo dopo le opzioni più accessibili. Se però l’obiettivo principale è il focus, Mush N Go può diventare la scelta più interessante del confronto, soprattutto per chi conosce già Lion’s Mane e adattogeni.'
+    description: 'Mush N Go è quarto, ma non perché sia debole. È semplicemente più tecnico e più orientato alla performance mentale. Il brand si posiziona nel mondo focus, produttività e funghi adattogeni, quindi parla meglio a chi cerca un effetto funzionale preciso rispetto a chi vuole solo una bevanda calda rassicurante.\n\nIl prodotto Brainstoorm è il più coerente per chi associa il caffè ai funghi a concentrazione, lavoro profondo e routine da mattina produttiva. La presenza di ingredienti come Lion’s Mane, Cordyceps o Chaga lo rende più vicino all’universo integratori, con una lettura più “biohacking” rispetto a Bonjour Drink o Clearly.\n\nLo mettiamo dopo le opzioni più accessibili perché richiede un minimo di maturità del mercato: un principiante italiano potrebbe trovarlo meno immediato. Ma per chi cerca soprattutto focus ed energia mentale, Mush N Go può essere uno dei prodotti più interessanti del Top 6.'
   },
   {
     rank: 5,
@@ -168,7 +168,7 @@ const products: Product[] = [
       'Può contenere una componente più stimolante secondo la versione scelta',
       'Il messaggio è meno verticale su “caffè ai funghi”'
     ],
-    description: 'Drink Dyna entra in quinta posizione come opzione più accessibile e più vicina al concetto di super coffee. È utile per chi vuole una bevanda funzionale senza passare subito a una formula troppo specialistica.\n\nIl limite è la pertinenza SEO: per una pagina centrata su caffè ai funghi, Dyna è meno diretto di French Mush, Bonjour Drink, Clearly e Mush N Go. Resta però valido come alternativa pratica per confrontare prezzo, gusto e facilità di adozione.'
+    description: 'Drink Dyna entra in quinta posizione come opzione più accessibile e più vicina al concetto di super coffee. Il brand ha un approccio pratico: prodotto semplice da capire, prezzo d’ingresso interessante e formato adatto a chi vuole testare una bevanda funzionale senza investire subito in una formula troppo specialistica.\n\nIl prodotto Super Coffee funziona bene come alternativa di transizione. Non è necessariamente la scelta più verticale sui funghi, ma può piacere a chi vuole restare vicino al mondo caffè, provare gusti diversi e mantenere una routine energizzante. Per un comparativo italiano, è utile perché copre un profilo più “mainstream” rispetto ai primi prodotti.\n\nIl limite è la pertinenza SEO: su una pagina centrata su caffè ai funghi, Dyna è meno diretto di French Mush, Bonjour Drink, Clearly e Mush N Go. Resta però valido per completare il panorama, soprattutto per prezzo, praticità e facilità di adozione.'
   },
   {
     rank: 6,
@@ -198,7 +198,7 @@ const products: Product[] = [
       'Meno prioritario rispetto ai partner LMC più forti',
       'Non è la prima scelta da spingere finché il mercato italiano resta piccolo'
     ],
-    description: 'Upraising chiude il Top 6 perché ha senso come prodotto di confronto, ma non come raccomandazione principale. È più vicino al mushroom coffee internazionale e può interessare chi cerca proprio quel formato.\n\nLo teniamo nel comparativo per dare una panoramica completa, ma la priorità commerciale resta sulle marche con miglior fit LMC, maggiore chiarezza e proposta più facile da spiegare al pubblico italiano.'
+    description: 'Upraising chiude il Top 6 perché ha senso come prodotto di confronto, ma non come raccomandazione principale. Il brand è più vicino al mushroom coffee internazionale: packaging, promesse e formato parlano a un pubblico già curioso della categoria, meno a chi arriva dalla cultura italiana dell’espresso.\n\nIl prodotto Flow State è interessante per completare il panorama: aiuta a mostrare che il caffè ai funghi non è solo una alternativa dolce al caffè, ma anche una categoria con prodotti orientati stato mentale, concentrazione e routine funzionale. Può parlare a chi cerca una soluzione più internazionale e meno “bevanda da colazione”.\n\nLo teniamo nel comparativo per dare profondità e coprire una variante importante del mercato. La priorità commerciale resta però sulle marche con miglior fit LMC, maggiore chiarezza per l’Italia e proposta più facile da spiegare in pochi secondi.'
   }
 ];
 
