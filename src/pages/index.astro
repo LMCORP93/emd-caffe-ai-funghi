@@ -1,0 +1,145 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHero from '@/components/BlogHero.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import ComparatorCard from '@/components/ComparatorCard.astro';
+import SidebarCTA from '@/components/SidebarCTA.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import ComparisonTable from '@/components/ComparisonTable.astro';
+import InnerNote from '@/components/InnerNote.astro';
+import config from '@/data/site.config';
+
+const topProduct = config.products[0];
+const pageTitle = config.seo.title;
+const pageDescription = config.seo.description;
+const comparatifFaq = config.faq;
+const productLink = (brand: string, label = brand) => {
+  const product = config.products.find((item) => item.brand === brand);
+  const href = product?.affiliateLink && product.affiliateLink !== '#' ? product.affiliateLink : `#product-${product?.slug ?? ''}`;
+  const rel = href.startsWith('#') ? '' : ' rel="nofollow sponsored" target="_blank"';
+  return `<a class="table-link" href="${href}"${rel}>${label}</a>`;
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: config.domain }],
+  })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: config.products.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name: `${p.name} - ${p.brand}`,
+        image: p.image,
+        brand: { '@type': 'Brand', name: p.brand },
+        offers: { '@type': 'Offer', priceCurrency: 'EUR', price: p.discountPrice.replace(/[^\d,.]/g, '').replace(',', '.'), availability: 'https://schema.org/InStock', url: p.affiliateLink || config.domain },
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: p.rating, bestRating: 10, reviewCount: p.reviewCount },
+      },
+    })),
+  })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: comparatifFaq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+  })} />
+
+  <BlogHero
+    title={pageTitle}
+    description="Analizziamo i migliori caffè ai funghi per il mercato italiano: formula, gusto, energia, prezzo, disponibilità e coupon. L’obiettivo è scegliere bene, non inseguire promesse miracolose."
+    author={config.author.name}
+    authorAvatar={config.author.avatar}
+    date="29 aprile 2026"
+    readingTime="12 min di lettura"
+    breadcrumbs={[{ label: 'Caffè ai funghi', href: '/' }]}
+    bannerImage="/images/content/emd-cafe-champignons-banner.webp"
+    product={{ name: topProduct.name, image: topProduct.image, promoCode: topProduct.promoCode, promoPercent: topProduct.promoPercent, originalPrice: topProduct.originalPrice, discountPrice: topProduct.discountPrice, affiliateLink: topProduct.affiliateLink }}
+    heroButton={{ text: 'Vedi il Top 6', href: `#product-${topProduct.slug}` }}
+    showOfferBlock={false}
+  />
+
+  <main style="background-color:#ffffff;">
+    <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
+      <div class="content-column">
+        <section id="introduzione" class="rich-text">
+          <h2>Caffè ai funghi: il riassunto rapido</h2>
+          <p>Il <strong>caffè ai funghi</strong> è ancora una categoria giovane in Italia, ma l’intenzione di ricerca è già chiara. Le persone cercano una bevanda che mantenga il rituale del caffè, riduca nervosismo e acidità, e aggiunga un profilo funzionale con ingredienti come Lion’s Mane, Reishi, Cordyceps o Chaga. Il problema è che molte marche usano parole simili, ma non spiegano davvero quale prodotto conviene scegliere.</p>
+          <p>Per questo la prima pagina di <strong>caffe-ai-funghi.it</strong> parte da un comparativo netto. Non vogliamo creare una lista infinita, ma ordinare le sei opzioni più utili per LMC in questa fase: <strong>French Mush</strong>, <strong>Bonjour Drink</strong>, <strong>Clearly Not Coffee</strong>, <strong>Mush N Go</strong>, <strong>Drink Dyna</strong> e <strong>Upraising</strong>. Ogni prodotto risponde a un profilo diverso: estratti funzionali, alternativa dolce al caffè, Not Coffee moderno, formula concentrata, super coffee accessibile o mushroom coffee internazionale.</p>
+          <p>La nostra scelta numero uno è <strong>French Mush</strong>, perché ha il miglior fit con la query “caffè ai funghi”: è specializzata negli estratti, parla a un pubblico già curioso di funghi funzionali e ha una proposta più credibile di molte bevande generiche. <strong>Bonjour Drink</strong> è seconda perché è la scelta più facile per chi vuole iniziare. <strong>Clearly</strong> è terza perché risponde benissimo all’intenzione di ridurre il caffè classico senza perdere il rituale.</p>
+        </section>
+
+        <TableOfContents items={config.tocItems} />
+
+        <section id="ranking" class="comparatif-cards">
+          {config.products.map((product) => (
+            <div id={`product-${product.slug}`}><ComparatorCard product={product} /></div>
+          ))}
+        </section>
+
+        <section id="metodologia" class="rich-text seo-guide">
+          <h2>Come abbiamo valutato il comparativo</h2>
+          <p>La prima regola è stata separare marketing e utilità reale. Un caffè ai funghi non deve vincere perché usa parole come “focus”, “energia naturale” o “adattogeno”. Deve spiegare cosa contiene, come si usa, quale esperienza offre e per quale tipo di persona ha senso. In questa categoria la ripetizione quotidiana conta molto: una formula impressionante sulla carta perde valore se il gusto o la preparazione impediscono di usarla ogni mattina.</p>
+          <p>Abbiamo poi valutato la coerenza con il mercato italiano. L’Italia ha una cultura del caffè molto forte, quindi una bevanda alternativa deve essere chiara fin dal primo contatto. Chi cerca “caffè ai funghi” non vuole leggere un trattato sui funghi medicinali: vuole sapere cosa comprare, quale marca ha più senso, quanto costa, se esiste un codice promo e quale prodotto è più adatto alla sua routine.</p>
+          <p>Il terzo criterio è stato l’equilibrio tra formula e promessa. Lion’s Mane viene spesso associato alla concentrazione, Cordyceps all’energia, Reishi al recupero e Chaga al supporto antiossidante. Ma il risultato finale dipende da dosi, estratti, presenza o assenza di caffeina, gusto, prezzo per tazza e tolleranza digestiva. Per questo French Mush e Bonjour Drink finiscono davanti: uno è più tecnico, l’altro è più facile da adottare.</p>
+        </section>
+
+        <InnerNote emoji="📌" text="La scelta migliore non è sempre quella più forte: per una routine quotidiana, gusto, tolleranza e semplicità contano quanto la lista degli ingredienti." />
+
+        <section id="scegliere" class="rich-text seo-guide">
+          <h2>Come scegliere un caffè ai funghi</h2>
+          <h3>Se vuoi un prodotto centrato sui funghi funzionali</h3>
+          <p>Parti da French Mush o Mush N Go. Sono le opzioni più vicine all’universo degli estratti e degli adattogeni. French Mush è più equilibrata come raccomandazione principale perché resta leggibile anche per un pubblico non esperto, mentre Mush N Go è più orientata a focus, produttività e formula concentrata.</p>
+          <h3>Se vuoi sostituire il caffè quotidiano</h3>
+          <p>Bonjour Drink e Clearly Not Coffee sono più rassicuranti. Non chiedono di cambiare completamente abitudine: mantieni la tazza del mattino, ma provi una bevanda meno aggressiva. Bonjour Drink è più morbida e accessibile, Clearly è più diretto sul concetto “Not Coffee”.</p>
+          <h3>Se vuoi restare vicino al gusto del caffè</h3>
+          <p>Drink Dyna e Upraising hanno senso come opzioni di confronto. Non sono il cuore del nostro ranking, ma aiutano a coprire profili diversi: chi vuole un super coffee funzionale, chi cerca un formato più internazionale, chi vuole testare prima di passare a formule più specializzate.</p>
+        </section>
+
+        <ComparisonTable title="Guida rapida per scegliere" headers={[{label:'Profilo'}, {label:'Migliore opzione'}]} rows={[
+          { cells: ['<span class="table-fit">🏆 Miglior fit caffè ai funghi</span><span class="table-muted"> Estratti, coerenza e credibilità</span>', productLink('French Mush', '✅ French Mush')], highlight: true },
+          { cells: ['<span class="table-fit">☕ Più facile per iniziare</span><span class="table-muted"> Bevanda morbida e routine quotidiana</span>', productLink('Bonjour Drink', '✅ Bonjour Drink') ] },
+          { cells: ['<span class="table-fit">🌿 Miglior alternativa Not Coffee</span><span class="table-muted"> Ridurre il caffè senza perdere il rituale</span>', productLink('Clearly', '✅ Clearly Not Coffee') ] },
+          { cells: ['<span class="table-fit">🧠 Formula più focus</span><span class="table-muted"> Concentrazione e adattogeni</span>', productLink('Mush N Go', '✅ Mush N Go') ] },
+          { cells: ['<span class="table-fit">⚡ Super coffee accessibile</span><span class="table-muted"> Prezzo e praticità</span>', productLink('Drink Dyna', '✅ Drink Dyna') ] },
+          { cells: ['<span class="table-fit">🔎 Mushroom coffee da confrontare</span><span class="table-muted"> Utile per completare il panorama</span>', productLink('Upraising', '✅ Upraising') ] },
+        ]} />
+
+        <section id="benefici" class="rich-text seo-guide">
+          <h2>Benefici attesi e limiti reali</h2>
+          <p>Il caffè ai funghi viene spesso cercato per tre motivi: energia più stabile, maggiore concentrazione e digestione più leggera rispetto al caffè classico. Sono motivazioni comprensibili, ma non devono essere trasformate in promesse mediche. Nella pratica, il beneficio più concreto per molti utenti è sostituire una bevanda che crea nervosismo o acidità con un rituale più morbido.</p>
+          <p>Il secondo punto è la regolarità. Gli adattogeni non funzionano come una bevanda energetica che si giudica in venti minuti. Molte formule hanno senso se usate ogni giorno per alcune settimane, osservando sonno, concentrazione, stomaco e tolleranza. Ecco perché gusto e facilità di preparazione sono criteri SEO e commerciali: se il prodotto non si beve volentieri, il resto conta poco.</p>
+          <p>Il limite principale resta l’aspettativa. Se cerchi l’intensità di un espresso italiano, molte alternative sembreranno diverse. Se invece vuoi ridurre caffeina, nervosismo o picchi di energia, la categoria diventa più interessante. La scelta giusta dipende dal tuo obiettivo: rituale, focus, gusto, prezzo o formula.</p>
+        </section>
+
+        <section id="prezzo" class="rich-text seo-guide">
+          <h2>Prezzo, coupon e disponibilità</h2>
+          <p>In questa categoria bisogna guardare il prezzo per tazza, non solo il prezzo del barattolo. Un prodotto da 30 o 40 euro può essere corretto se offre porzioni reali, ingredienti di qualità e una formula coerente. Bisogna anche capire se lo sconto arriva da un coupon, da un bundle o da una sottoscrizione. Per LMC il coupon aiuta la conversione, ma non deve sostituire il criterio principale: formula, uso e fiducia.</p>
+          <p>French Mush guadagna il primo posto perché unisce verticalità e codice promo. Bonjour Drink è molto forte per il pubblico che vuole iniziare senza complicarsi. Clearly è competitiva per chi cerca proprio una alternativa al caffè. Mush N Go può giustificare il prezzo se il focus è la concentrazione. Dyna e Upraising completano il confronto per profili più specifici.</p>
+        </section>
+
+        <section id="verdetto" class="rich-text seo-guide">
+          <h2>Verdetto finale</h2>
+          <p><strong>French Mush è la nostra raccomandazione principale</strong> per la prima pagina di caffe-ai-funghi.it. È la scelta più coerente con l’intenzione “caffè ai funghi”, perché il brand è specializzato, la proposta è leggibile e il prodotto resta allineato con il mondo degli estratti funzionali.</p>
+          <p><strong>Bonjour Drink</strong> è la migliore scelta per iniziare senza frizione, soprattutto se l’obiettivo è ridurre il caffè classico. <strong>Clearly Not Coffee</strong> è ideale per chi vuole una alternativa moderna e semplice. <strong>Mush N Go</strong> parla a chi cerca più focus. <strong>Drink Dyna</strong> e <strong>Upraising</strong> servono a coprire opzioni più pratiche o più vicine al mushroom coffee internazionale.</p>
+        </section>
+
+        <section id="faq" class="faq-section"><FAQSection faq={comparatifFaq} title="Domande frequenti" /></section>
+      </div>
+      <aside class="sidebar-column"><div class="sidebar-sticky"><SidebarCTA logoSrc={topProduct.brandLogo}
+              productName={topProduct.name}
+              brandName={topProduct.brand} promoCode={topProduct.promoCode} promoPercent={topProduct.promoPercent} originalPrice={topProduct.originalPrice} discountPrice={topProduct.discountPrice} ctaLink={topProduct.affiliateLink} heroImage={topProduct.image} rating={topProduct.rating} reviewCount={topProduct.reviewCount} /></div></aside>
+    </div></div></div>
+  </main>
+</BaseLayout>
+
+<style>
+  .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 2rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
+  .seo-guide p { margin-bottom: 1rem; line-height: 1.8; color: #444; }
+  .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+</style>

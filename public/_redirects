@@ -1,0 +1,27 @@
+# Legacy/general redirects
+/contact / 301
+/contact/ / 301
+
+# Old accidental slugs consolidated
+/comparatif/ / 301
+/comparatif / 301
+/alternativa-al-cafe/ / 301
+/alternativa-al-cafe / 301
+/cafe-de-hongos-beneficios/ / 301
+/cafe-de-hongos-beneficios / 301
+
+# Old inherited French URLs to homepage
+/boisson-electrolyte / 301
+/boisson-electrolyte/ / 301
+/poudre-electrolyte / 301
+/poudre-electrolyte/ / 301
+/electrolytes-sport / 301
+/electrolytes-sport/ / 301
+/electrolytes-naturels / 301
+/electrolytes-naturels/ / 301
+/electrolytes-danger / 301
+/electrolytes-danger/ / 301
+/mentions-legales /legal-notice/ 301
+/mentions-legales/ /legal-notice/ 301
+/politique-de-confidentialite /privacy-policy/ 301
+/politique-de-confidentialite/ /privacy-policy/ 301

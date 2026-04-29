@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import config from '@/data/site.config';
+---
+<BaseLayout title={`Privacy policy | ${config.siteName}`} description="Privacy policy di Caffè ai Funghi">
+  <main class="container-large padding-global py-16 rich-text">
+    <h1 class="text-4xl font-bold mb-6">Privacy policy</h1>
+    <p>Questo sito non vende dati personali. Possiamo raccogliere dati tecnici anonimi o aggregati per misurare il traffico, migliorare i contenuti e monitorare i clic verso i partner.</p>
+    <p>Alcuni link sono link affiliati. Un clic verso un partner può essere tracciato per attribuire una commissione a LMC, senza costo aggiuntivo per l’utente.</p>
+    <p>Puoi contattarci per qualsiasi domanda sulla privacy a: hello@le-meilleur-complement.fr</p>
+    <a class="text-primary font-semibold" href="/">Torna al comparativo</a>
+  </main>
+</BaseLayout>

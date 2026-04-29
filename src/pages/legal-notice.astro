@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import config from '@/data/site.config';
+---
+<BaseLayout title={`Note legali | ${config.siteName}`} description="Note legali di Caffè ai Funghi">
+  <main class="container-large padding-global py-16 rich-text">
+    <h1 class="text-4xl font-bold mb-6">Note legali</h1>
+    <p><strong>Responsabile editoriale:</strong> LMC.</p>
+    <p>Questo sito pubblica contenuti informativi e comparativi su caffè ai funghi, bevande funzionali e alternative al caffè. Le informazioni non sostituiscono il parere di un professionista sanitario.</p>
+    <p>Alcuni link presenti sul sito sono link affiliati. Se acquisti tramite questi link, LMC può ricevere una commissione senza costo aggiuntivo per te.</p>
+    <p>Per qualsiasi richiesta puoi contattarci a: hello@le-meilleur-complement.fr</p>
+    <a class="text-primary font-semibold" href="/">Torna al comparativo</a>
+  </main>
+</BaseLayout>
