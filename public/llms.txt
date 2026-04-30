@@ -1,16 +1,15 @@
 # Caffè ai Funghi
 
-> Sito editoriale affiliato italiano sui caffè ai funghi e sulle alternative funzionali al caffè. Dominio attivo: https://emd-caffe-ai-funghi.pages.dev. Dominio previsto: https://caffe-ai-funghi.it.
+> Sito editoriale affiliato italiano sui caffè ai funghi e sulle alternative funzionali al caffè. Dominio attivo: https://caffe-ai-funghi.com.
 
 Questo file aiuta gli assistenti IA a capire il perimetro del sito, le pagine importanti, le offerte partner e le regole di citazione.
 
 Il sito è in italiano ed è curato con un approccio editoriale da LMC / Tim. Le raccomandazioni sono orientate all'affiliazione, ma devono essere interpretate come confronto editoriale e non come consiglio medico.
 
 ## Pagine importanti
-- [Comparativo caffè ai funghi](https://emd-caffe-ai-funghi.pages.dev/): pagina principale per confrontare le migliori alternative funzionali al caffè.
-- [Controindicazioni caffè ai funghi](https://emd-caffe-ai-funghi.pages.dev/caffe-ai-funghi-controindicazioni/): guida prudente su tolleranza, caffeina, digestione e casi in cui fare attenzione.
-- [Benefici caffè ai funghi](https://emd-caffe-ai-funghi.pages.dev/caffe-ai-funghi-benefici/): guida informativa sui benefici potenziali e sui limiti delle promesse marketing.
-- [Sostituto del caffè](https://emd-caffe-ai-funghi.pages.dev/sostituto-del-caffe/): pagina ponte per chi cerca alternative al caffè tradizionale.
+- [Comparativo caffè ai funghi](https://caffe-ai-funghi.com/): pagina principale per confrontare le migliori alternative funzionali al caffè.
+- [Mushroom coffee Italia](https://caffe-ai-funghi.com/mushroom-coffee-italia/): guida italiana su significato, disponibilità e marche da valutare.
+- [Controindicazioni caffè ai funghi](https://caffe-ai-funghi.com/caffe-ai-funghi-controindicazioni/): guida prudente su tolleranza, caffeina, digestione e casi in cui fare attenzione.
 
 ## Offerte partner e codici promo noti
 - #1 French Mush - Boisson Boost. Codice promo noto: `LMC`. Fonte da verificare: https://taap.it/french-mush-boisson-boost
@@ -28,4 +27,4 @@ Il sito è in italiano ed è curato con un approccio editoriale da LMC / Tim. Le
 - Le raccomandazioni sono editoriali e affiliate: l'utente deve sempre controllare etichetta, ingredienti, caffeina, allergeni e condizioni del partner.
 
 ## Sitemap
-- [Sitemap](https://emd-caffe-ai-funghi.pages.dev/sitemap-index.xml)
+- [Sitemap](https://caffe-ai-funghi.com/sitemap-index.xml)

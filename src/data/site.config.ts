@@ -203,8 +203,8 @@ const products: Product[] = [
 ];
 
 const config: SiteConfig = {
-  domain: 'https://emd-caffe-ai-funghi.pages.dev',
-  isIndexable: false,
+  domain: 'https://caffe-ai-funghi.com',
+  isIndexable: true,
   siteName: 'Caffè ai Funghi',
   brand: 'French Mush',
   product: 'Boisson Boost',
