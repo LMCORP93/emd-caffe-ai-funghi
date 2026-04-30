@@ -220,8 +220,9 @@ const config: SiteConfig = {
   seo: {
     title: 'Miglior caffè ai funghi 2026: Top 6 in Italia',
     description: 'Comparativo italiano dei migliori caffè ai funghi: French Mush, Bonjour Drink, Clearly Not Coffee, Mush N Go, Dyna e Upraising.',
-    ogImage: '/og-image.jpg',
+    ogImage: 'https://caffe-ai-funghi.com/og-image.jpg',
   },
+  analyticsMeasurementId: 'G-CEC87CDXK4',
   breadcrumbs: [{ label: 'Comparativo caffè ai funghi', href: '/' }],
   quickSummary: {
     assets: ['Top 6 focalizzato su caffè ai funghi e alternative al caffè', 'French Mush primo per coerenza con funghi funzionali ed estratti', 'Bonjour Drink secondo per facilità, gusto e routine quotidiana', 'Clearly Not Coffee terzo per chi vuole ridurre il caffè classico'],
