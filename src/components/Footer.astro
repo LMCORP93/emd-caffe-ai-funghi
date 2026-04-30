@@ -46,9 +46,9 @@ const guideLinks = navLinks
 
 // Legal / information links
 const infoLinks: NavLink[] = [
-  { label: 'Privacy policy', href: '/privacy-policy/' },
+  { label: 'Informativa sulla privacy', href: '/privacy-policy/' },
   { label: 'Note legali', href: '/legal-notice/' },
-  { label: 'hello@le-meilleur-complement.fr', href: 'mailto:hello@le-meilleur-complement.fr' },
+  { label: 'hello [at] le-meilleur-complement.fr', href: '/legal-notice/#contatto' },
 ];
 ---
 
@@ -57,23 +57,23 @@ const infoLinks: NavLink[] = [
     <!-- 2-column grid: links only -->
     <div class="footer_grid">
 
-      <!-- Column 1: Guides -->
+      <!-- Column 1: Guide -->
       <div class="footer_colonne">
-        <div class="footer_col-title">Guides</div>
+        <div class="footer_col-title">Guide</div>
         <div class="footer_wrapper-links">
           {guideLinks.length > 0 ? guideLinks.map((link) => (
             <a href={link.href} class="footer_link">
               {link.label}
             </a>
           )) : (
-            <span class="footer_link--placeholder">Coming soon…</span>
+            <span class="footer_link--placeholder">Disponibile a breve…</span>
           )}
         </div>
       </div>
 
-      <!-- Column 2: Information -->
+      <!-- Column 2: Informazioni -->
       <div class="footer_colonne">
-        <div class="footer_col-title">Information</div>
+        <div class="footer_col-title">Informazioni</div>
         <div class="footer_wrapper-links">
           {infoLinks.map((link) => (
             <a href={link.href} class="footer_link">
