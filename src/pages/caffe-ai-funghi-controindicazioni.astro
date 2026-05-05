@@ -6,6 +6,7 @@ import TableOfContents from '@/components/TableOfContents.astro';
 import ComparatorCard from '@/components/ComparatorCard.astro';
 import SidebarCTA from '@/components/SidebarCTA.astro';
 import FAQSection from '@/components/FAQSection.astro';
+import ContentImage from '@/components/ContentImage.astro';
 import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
 import ReviewPromoCard from '@/components/ReviewPromoCard.astro';
@@ -243,6 +244,24 @@ const productLink = (brand: string, label = brand) => {
           <p>Consulta rapidamente se compaiono sintomi insoliti: rash, difficoltà respiratoria, gonfiore importante, dolore persistente, palpitazioni forti, insonnia marcata, nausea intensa o peggioramento netto di una condizione esistente. La soluzione non è cercare di “resistere” perché il prodotto è naturale. La soluzione è interrompere e capire se la formula è adatta a te.</p>
           <p>Il verdetto pratico: il caffè ai funghi può essere una buona alternativa per ridurre il caffè classico, ma deve restare una scelta ragionata. La formula migliore è quella che capisci, tolleri e riesci a usare senza forzare il corpo.</p>
         </section>
+
+                <ContentImage
+          src="/images/content/emd-cafe-champignons-banner.webp"
+          alt="Ingredienti naturali legati al caffè ai funghi"
+          caption="Le controindicazioni si valutano meglio quando si distingue tra caffè, cacao, adattogeni e sensibilità personale."
+        />
+
+        <ContentImage
+          src="/images/content/mushroom-coffee-italia-banner.webp"
+          alt="Tazza calda di mushroom coffee in ambiente italiano"
+          caption="Il contesto d’uso aiuta a capire se la bevanda sostituisce davvero il caffè classico."
+        />
+
+        <ContentImage
+          src="/images/content/caffe-ai-funghi-precauzioni-inline.webp"
+          alt="Caffè ai funghi e precauzioni prima dell’uso"
+          caption="Una scelta prudente parte sempre da ingredienti, sensibilità alla caffeina e contesto personale."
+        />
 
         <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
       </div>

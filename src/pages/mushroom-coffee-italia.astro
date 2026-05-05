@@ -5,6 +5,7 @@ import FirstReview from '@/components/FirstReview.astro';
 import TableOfContents from '@/components/TableOfContents.astro';
 import SidebarCTA from '@/components/SidebarCTA.astro';
 import FAQSection from '@/components/FAQSection.astro';
+import ContentImage from '@/components/ContentImage.astro';
 import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
 import ReviewPromoCard from '@/components/ReviewPromoCard.astro';
@@ -207,6 +208,24 @@ const productLink = (brand: string, label = brand) => {
           <p>Se vuoi passare dalla definizione all’acquisto, il passaggio più utile è il comparativo principale italiano. Lì trovi ranking, prodotti, prezzi, coupon, pro/contro e profili d’uso. Per noi, <strong>French Mush</strong> resta la prima opzione da mettere in avanti per l’Italia perché combina disponibilità online, coerenza con i funghi funzionali e proposta commerciale chiara.</p>
           <p><a class="primary-inline-cta" href="/">Vedi il comparativo caffè ai funghi in Italia</a></p>
         </section>
+
+                <ContentImage
+          src="/images/content/caffe-ai-funghi-corpo-tolleranza.webp"
+          alt="Routine italiana con bevanda funzionale ai funghi"
+          caption="Il mushroom coffee va valutato come rituale quotidiano, non come semplice sostituto del caffè."
+        />
+
+        <ContentImage
+          src="/images/content/emd-cafe-champignons-banner.webp"
+          alt="Funghi funzionali e ingredienti naturali su fondo caldo"
+          caption="Gli ingredienti sono il primo filtro per scegliere una formula seria e coerente con l’uso quotidiano."
+        />
+
+        <ContentImage
+          src="/images/content/caffe-ai-funghi-controindicazioni-banner.webp"
+          alt="Ingredienti e precauzioni per scegliere un mushroom coffee"
+          caption="Anche in Italia, la scelta deve restare prudente sur caffeina, adattogeni e sensibilità personale."
+        />
 
         <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
       </div>
