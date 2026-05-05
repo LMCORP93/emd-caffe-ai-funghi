@@ -10,6 +10,7 @@ import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
 import ReviewPromoCard from '@/components/ReviewPromoCard.astro';
 import config from '@/data/site.config';
+import AuthorBioCard from '@/components/AuthorBioCard.astro';
 
 const topProduct = config.products[0];
 const pageTitle = 'Mushroom coffee Italia: cos’è, dove comprarlo e marche disponibili';
@@ -226,6 +227,8 @@ const productLink = (brand: string, label = brand) => {
           alt="Ingredienti e precauzioni per scegliere un mushroom coffee"
           caption="Anche in Italia, la scelta deve restare prudente sur caffeina, adattogeni e sensibilità personale."
         />
+
+        <AuthorBioCard />
 
         <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
       </div>

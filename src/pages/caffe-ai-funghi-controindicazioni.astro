@@ -11,6 +11,7 @@ import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
 import ReviewPromoCard from '@/components/ReviewPromoCard.astro';
 import config from '@/data/site.config';
+import AuthorBioCard from '@/components/AuthorBioCard.astro';
 
 const topProduct = config.products[0];
 const contraindicationsBanner = '/images/content/caffe-ai-funghi-controindicazioni-banner.webp';
@@ -262,6 +263,8 @@ const productLink = (brand: string, label = brand) => {
           alt="Caffè ai funghi e precauzioni prima dell’uso"
           caption="Una scelta prudente parte sempre da ingredienti, sensibilità alla caffeina e contesto personale."
         />
+
+        <AuthorBioCard />
 
         <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
       </div>
