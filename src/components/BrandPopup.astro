@@ -19,6 +19,12 @@ const {
 } = Astro.props;
 
 const shortDesc = description.length > 100 ? description.slice(0, 97) + '...' : description;
+const hasPromo = Boolean(promoCode);
+const hasPromoPercent = Number(promoPercent) > 0;
+const promoPercentLabel = hasPromoPercent ? `-${promoPercent}%` : '';
+const triggerText = hasPromo
+  ? `Codice promo ${promoCode}`
+  : 'Vedi offerta';
 ---
 
 <div id="brand-popup" class="bp" role="dialog" aria-modal="true" aria-label="Offerta esclusiva">
@@ -50,7 +56,7 @@ const shortDesc = description.length > 100 ? description.slice(0, 97) + '...' : 
       </div>
 
       <!-- Buttons stacked -->
-      {promoCode && promoPercent > 0 && (
+      {hasPromo && (
         <div class="bp-btns">
           <a href={affiliateLink} rel="nofollow sponsored" target="_blank" class="btn-solid" style="width:100%">
             <span>Acquista ora</span>
@@ -65,7 +71,7 @@ const shortDesc = description.length > 100 ? description.slice(0, 97) + '...' : 
               </svg>
             </span>
             <span class="promo-code-text">{promoCode}</span>
-            <span class="promo-percent">-{promoPercent}%</span>
+            {hasPromoPercent && <span class="promo-percent">{promoPercentLabel}</span>}
           </button>
         </div>
       )}
@@ -76,7 +82,7 @@ const shortDesc = description.length > 100 ? description.slice(0, 97) + '...' : 
 <!-- Floating button to open popup -->
 <button id="popup-trigger" class="bp-trigger" aria-label="Vedi offerta esclusiva">
   <span class="bp-trigger-gift" aria-hidden="true">🎁</span>
-  <span class="bp-trigger-text">-{promoPercent}% {promoCode}</span>
+  <span class="bp-trigger-text">{triggerText}</span>
 </button>
 
 <script>
