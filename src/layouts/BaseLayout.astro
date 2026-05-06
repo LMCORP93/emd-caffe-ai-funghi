@@ -3,6 +3,7 @@ import '@/styles/global.css';
 import Navbar from '@/components/Navbar.astro';
 import Footer from '@/components/Footer.astro';
 import BrandPopup from '@/components/BrandPopup.astro';
+import CookieNotice from '@/components/CookieNotice.astro';
 import config from '@/data/site.config';
 
 interface Props {
@@ -109,6 +110,8 @@ const footerLinks = [
       affiliateLink={config.products[0].affiliateLink}
       rating={config.products[0].rating}
     />
+
+    <CookieNotice lang="it" privacyHref="/privacy-policy/" />
 
     <Footer
       siteName={config.siteName}
