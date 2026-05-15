@@ -129,7 +129,15 @@ const productSchema = (p: typeof config.products[number]) => ({
             }}
           />
         </section>
-            <section id="metodologia-classifica" class="methodology-box">
+        <TableOfContents items={config.tocItems} />
+
+        <section id="ranking" class="comparatif-cards">
+          {config.products.map((product) => (
+            <div id={`product-${product.slug}`}><ComparatorCard product={product} /></div>
+          ))}
+        </section>
+
+        <section id="metodologia-classifica" class="methodology-box">
               <h2>Come abbiamo classificato i prodotti</h2>
               <p>La nostra classifica combina criteri editoriali e pratici, così la scelta non dipende solo dal prezzo o dallo sconto più alto.</p>
               <ul>
@@ -144,14 +152,6 @@ const productSchema = (p: typeof config.products[number]) => ({
               <p class="methodology-box__disclaimer"><strong>Nota editoriale.</strong> La selezione privilegia coerenza della formula, chiarezza dell’offerta e aderenza all’esigenza descritta, senza basarsi solo sul prezzo o sulle promesse marketing.</p>
             </section>
 
-
-        <TableOfContents items={config.tocItems} />
-
-        <section id="ranking" class="comparatif-cards">
-          {config.products.map((product) => (
-            <div id={`product-${product.slug}`}><ComparatorCard product={product} /></div>
-          ))}
-        </section>
 
         <section id="metodologia" class="rich-text seo-guide">
           <h2>Come abbiamo valutato il comparativo</h2>
