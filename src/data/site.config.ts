@@ -252,8 +252,8 @@ const config: SiteConfig = {
   ],
   pages: [
     { type: 'comparatif', label: 'Comparativo', slug: '/', image: '/images/content/emd-cafe-champignons-banner.webp' },
-    { type: 'blog', label: 'Mushroom coffee Italia', slug: '/mushroom-coffee-italia/' },
-    { type: 'blog', label: 'Controindicazioni', slug: '/caffe-ai-funghi-controindicazioni/' },
+    { type: 'blog', label: 'Mushroom coffee Italia', slug: '/mushroom-coffee-italia/', image: '/images/content/mushroom-coffee-italia-banner.webp' },
+    { type: 'blog', label: 'Controindicazioni', slug: '/caffe-ai-funghi-controindicazioni/', image: '/images/content/caffe-ai-funghi-controindicazioni-banner.webp' },
   ],
 };
 
