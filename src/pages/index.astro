@@ -64,12 +64,7 @@ const productSchema = (p: typeof config.products[number]) => ({
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: config.domain }],
-  })} />
-  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+    <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     itemListElement: config.products.map((p, i) => ({
@@ -91,7 +86,6 @@ const productSchema = (p: typeof config.products[number]) => ({
     authorAvatar={config.author.avatar}
     date="29 aprile 2026"
     readingTime="12 min di lettura"
-    breadcrumbs={[{ label: 'Caffè ai funghi', href: '/' }]}
     bannerImage="/images/content/emd-cafe-champignons-banner.webp"
     product={{ name: topProduct.name, image: topProduct.image, promoCode: topProduct.promoCode, promoPercent: topProduct.promoPercent, originalPrice: topProduct.originalPrice, discountPrice: topProduct.discountPrice, affiliateLink: topProduct.affiliateLink }}
     heroButton={{ text: 'Vedi il Top 6', href: `#product-${topProduct.slug}` }}
@@ -203,7 +197,14 @@ const productSchema = (p: typeof config.products[number]) => ({
 
         <AuthorBioCard />
 
-        <section id="faq" class="faq-section"><FAQSection faq={comparatifFaq} title="Domande frequenti" /></section>
+        
+        <section id="ricerche-gsc" class="rich-text keyword-box">
+          <h2>Ricerche frequenti: controindicazioni, recensioni e miglior caffè ai funghi</h2>
+          <p>Le query GSC mostrano interesse per <strong>caffè ai funghi controindicazioni</strong>, <strong>miglior caffè ai funghi</strong>, <strong>Bonjour Drink recensioni</strong> e <strong>French Mush</strong>. Per questo la classifica dà peso a ingredienti, gusto, caffeina, prezzo, trasparenza e coerenza d’uso quotidiano.</p>
+          <p>Sulle controindicazioni, la posizione corretta resta prudente: attenzione a sensibilità digestive, gravidanza, allattamento, farmaci o patologie. Il termine ganoderma può essere pertinente quando si parla di Reishi, ma va citato solo come famiglia di funghi funzionali, senza trasformarlo in promessa medica.</p>
+        </section>
+
+<section id="faq" class="faq-section"><FAQSection faq={comparatifFaq} title="Domande frequenti" /></section>
       </div>
       <aside class="sidebar-column"><div class="sidebar-sticky"><SidebarCTA logoSrc={topProduct.brandLogo}
               productName={topProduct.name}
@@ -227,5 +228,9 @@ const productSchema = (p: typeof config.products[number]) => ({
 .methodology-box li { line-height: 1.45; }
 .methodology-box__disclaimer { margin-top: .85rem !important; padding-top: .85rem; border-top: 1px solid #eadfce; font-size: .92rem; }
 @media (max-width: 768px) { .methodology-box ul { grid-template-columns: 1fr; } .methodology-box { padding: 1rem; } }
+
+
+  .keyword-box { background:#f7f3eb; border:1px solid #eadfce; border-radius:16px; padding:1.35rem; color:#2f2922; }
+  .keyword-box h2, .keyword-box p, .keyword-box strong { color:#2f2922; }
 
 </style>
