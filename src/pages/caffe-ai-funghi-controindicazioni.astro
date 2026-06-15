@@ -17,8 +17,8 @@ import ArticleGrid from '@/components/ArticleGrid.astro';
 const topProduct = config.products[0];
 const contraindicationsBanner = '/images/content/caffe-ai-funghi-controindicazioni-banner.webp';
 const bodyToleranceImage = '/images/content/caffe-ai-funghi-corpo-tolleranza.webp';
-const pageTitle = 'Caffè ai funghi: controindicazioni, rischi e precauzioni';
-const pageDescription = 'Guida chiara sulle controindicazioni del caffè ai funghi: effetti collaterali, caffeina, gravidanza, farmaci, digestione e quando chiedere un parere medico.';
+const pageTitle = 'Caffè ai funghi controindicazioni: rischi, caffeina e French Mush';
+const pageDescription = 'Caffè ai funghi controindicazioni: rischi, caffeina, farmaci, gravidanza, stomaco, Reishi/Ganoderma e scelta prudente con French Mush.';
 
 const tocItems = [
   { id: 'sintesi', label: 'Sintesi' },
@@ -39,7 +39,7 @@ const cautiousProducts = [
   {
     ...config.products.find((item) => item.brand === 'French Mush')!,
     rank: 1,
-    description: 'French Mush è il partner principale da mettere avanti per il mercato italiano: è il prodotto più coerente con l’intenzione “caffè ai funghi”, vende in Italia e resta centrato sui funghi funzionali invece di essere solo una alternativa generica al caffè.\n\nSu una pagina dedicata alle precauzioni, la raccomandazione resta prudente: leggere ingredienti, controllare la presenza di caffeina, iniziare gradualmente e chiedere un parere professionale in caso di farmaci, gravidanza, patologie croniche o forte sensibilità agli integratori.'
+    description: 'French Mush è la scelta più coerente per chi cerca un vero caffè ai funghi in Italia: vende online, resta centrato sui funghi funzionali e non si limita a essere una alternativa generica al caffè.\n\nSu una pagina dedicata alle precauzioni, la raccomandazione resta prudente: leggere ingredienti, controllare la presenza di caffeina, iniziare gradualmente e chiedere un parere professionale in caso di farmaci, gravidanza, patologie croniche o forte sensibilità agli integratori.'
   }
 ];
 
@@ -52,6 +52,8 @@ const faq = [
   { question: 'Il caffè ai funghi contiene caffeina?', answer: 'Dipende dal prodotto. Alcune formule sono alternative al caffè e non contengono caffeina classica; altre includono caffè, tè, matcha o stimolanti. La sola parola “funghi” non significa automaticamente senza caffeina.' },
   { question: 'Chi dovrebbe chiedere un parere medico prima di provarlo?', answer: 'Persone in gravidanza o allattamento, chi assume farmaci, chi ha patologie croniche, malattie autoimmuni, disturbi epatici o renali, allergie ai funghi, forte sensibilità digestiva o reazioni frequenti agli integratori.' },
   { question: 'Come iniziare in modo prudente?', answer: 'Scegli una formula semplice, leggibile e preferibilmente non troppo stimolante. Inizia con mezza dose o una dose bassa, al mattino, per alcuni giorni. Non introdurre altri integratori nello stesso periodo, così capisci meglio la tua tolleranza.' },
+  { question: 'French Mush è adatto se cerco caffè ai funghi ma temo le controindicazioni?', answer: 'French Mush è interessante perché resta centrato sui funghi funzionali e sul mercato italiano. Va comunque valutato con prudenza: ingredienti, caffeina, dose, stomaco, farmaci e situazione personale contano più del nome del prodotto.' },
+  { question: 'Reishi e Ganoderma sono la stessa cosa?', answer: 'Ganoderma lucidum è il nome scientifico spesso associato al Reishi. Se una formula contiene Reishi/Ganoderma, valuta dose, tolleranza, farmaci e condizioni personali, soprattutto in caso di trattamenti o fragilità mediche.' },
 ];
 
 const productLink = (brand: string, label = brand) => {
@@ -213,7 +215,7 @@ const productLink = (brand: string, label = brand) => {
 
         <section class="rich-text seo-guide promo-section">
           <h2>La raccomandazione principale per l’Italia</h2>
-          <p><strong>French Mush</strong> è il prodotto da mettere avanti su questa pagina perché è il partner principale che vende in Italia e resta il più coerente con l’intenzione “caffè ai funghi”. La raccomandazione resta prudente: leggere ingredienti, controllare caffeina e iniziare progressivamente, soprattutto in caso di sensibilità o trattamenti.</p>
+          <p><strong>French Mush</strong> è le produit le plus cohérent à regarder si tu veux un vrai caffè ai funghi disponible pour l’Italie. La recommandation reste prudente : lire les ingrédients, contrôler la caffeina et commencer progressivement, surtout en cas de sensibilité digestive, de traitements ou de doutes personnels.</p>
         </section>
         <div class="template-promo-block">
           <ReviewPromoCard product={frenchMushProduct} />
@@ -221,7 +223,7 @@ const productLink = (brand: string, label = brand) => {
 
         <section id="scelte" class="rich-text seo-guide">
           <h2>Quali opzioni scegliere se vuoi restare prudente</h2>
-          <p>Su questa pagina teniamo una sola raccomandazione commerciale: <strong>French Mush</strong>. È il partner principale per l’Italia e il prodotto più allineato alla ricerca “caffè ai funghi”. Le altre marche possono restare nel comparativo generale, ma qui l’obiettivo è evitare dispersione e mandare il lettore verso l’offerta più pertinente.</p>
+          <p>Su questa pagina teniamo una sola raccomandazione commerciale: <strong>French Mush</strong>. È l’opzione più allineata a chi cerca un caffè ai funghi concreto, con una lettura prudente di caffeina, farmaci, stomaco e funghi funzionali. Le altre marche restano nel comparativo generale, ma qui l’obiettivo è non disperdere il lettore.</p>
         </section>
 
         <section class="comparatif-cards">
