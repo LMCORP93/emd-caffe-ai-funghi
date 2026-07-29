@@ -101,12 +101,12 @@ const productSchema = (p: typeof config.products[number]) => ({
             heading="Caffè ai funghi: guarda formula, rituale e tolleranza"
             paragraphs={[
               'Il caffè ai funghi è ancora una categoria giovane in Italia, ma l’intenzione di ricerca è già chiara: mantenere il rituale del caffè, ridurre nervosismo e acidità, e aggiungere ingredienti funzionali come Lion’s Mane, Reishi, Cordyceps o Chaga.',
-              'La nostra scelta numero uno è French Mush, perché ha il miglior fit con la query “caffè ai funghi”: marca specializzata, proposta credibile e lettura più chiara rispetto a molte bevande generiche. Bonjour Drink resta l’opzione più facile per iniziare, mentre Clearly è forte per chi vuole ridurre il caffè classico senza perdere il gesto quotidiano.',
+              'La nostra scelta numero uno è Mush N Go, perché mette al centro formula, focus e funghi funzionali con un percorso d’acquisto italiano diretto. French Mush resta una buona alternativa tecnica, mentre Bonjour Drink è l’opzione più facile per iniziare senza cambiare troppo il rituale del mattino.',
             ]}
             assets={[
-              'French Mush primo per coerenza con funghi funzionali ed estratti',
+              'Mush N Go primo per focus, formula e funghi funzionali',
               'Top 6 ordinato per formula, gusto, prezzo e uso quotidiano',
-              'Bonjour Drink e Clearly coprono bene il bisogno di alternativa al caffè',
+              'French Mush, Bonjour Drink e Clearly coprono bene gli altri profili di alternativa al caffè',
               'Coupon e link esterni verificati per ogni prodotto spinto',
             ]}
             considerations={[
@@ -152,7 +152,7 @@ const productSchema = (p: typeof config.products[number]) => ({
           <h2>Come abbiamo valutato il comparativo</h2>
           <p>La prima regola è stata separare marketing e utilità reale. Un caffè ai funghi non deve vincere perché usa parole come “focus”, “energia naturale” o “adattogeno”. Deve spiegare cosa contiene, come si usa, quale esperienza offre e per quale tipo di persona ha senso. In questa categoria la ripetizione quotidiana conta molto: una formula impressionante sulla carta perde valore se il gusto o la preparazione impediscono di usarla ogni mattina.</p>
           <p>Abbiamo poi valutato la coerenza con il mercato italiano. L’Italia ha una cultura del caffè molto forte, quindi una bevanda alternativa deve essere chiara fin dal primo contatto. Chi cerca “caffè ai funghi” non vuole leggere un trattato sui funghi medicinali: vuole sapere cosa comprare, quale marca ha più senso, quanto costa, se esiste un codice promo e quale prodotto è più adatto alla sua routine.</p>
-          <p>Il terzo criterio è stato l’equilibrio tra formula e promessa. Lion’s Mane viene spesso associato alla concentrazione, Cordyceps all’energia, Reishi al recupero e Chaga al supporto antiossidante. Ma il risultato finale dipende da dosi, estratti, presenza o assenza di caffeina, gusto, prezzo per tazza e tolleranza digestiva. Per questo French Mush e Bonjour Drink finiscono davanti: uno è più tecnico, l’altro è più facile da adottare.</p>
+          <p>Il terzo criterio è stato l’equilibrio tra formula e promessa. Lion’s Mane viene spesso associato alla concentrazione, Cordyceps all’energia, Reishi al recupero e Chaga al supporto antiossidante. Ma il risultato finale dipende da dosi, estratti, presenza o assenza di caffeina, gusto, prezzo per tazza e tolleranza digestiva. Per questo Mush N Go, French Mush e Bonjour Drink finiscono davanti: il primo è più focus e formula, il secondo resta tecnico, il terzo è più facile da adottare.</p>
         </section>
 
         <InnerNote emoji="📌" text="La scelta migliore non è sempre quella più forte: per una routine quotidiana, gusto, tolleranza e semplicità contano quanto la lista degli ingredienti." />
@@ -160,7 +160,7 @@ const productSchema = (p: typeof config.products[number]) => ({
         <section id="scegliere" class="rich-text seo-guide">
           <h2>Come scegliere un caffè ai funghi</h2>
           <h3>Se vuoi un prodotto centrato sui funghi funzionali</h3>
-          <p>Parti da French Mush o Mush N Go. Sono le opzioni più vicine all’universo degli estratti e degli adattogeni. French Mush è più equilibrata come raccomandazione principale perché resta leggibile anche per un pubblico non esperto, mentre Mush N Go è più orientata a focus, produttività e formula concentrata.</p>
+          <p>Parti da Mush N Go o French Mush. Sono le opzioni più vicine all’universo degli estratti e degli adattogeni. Mush N Go è la raccomandazione principale se cerchi focus, produttività e formula concentrata, mentre French Mush resta una alternativa tecnica e leggibile.</p>
           <h3>Se vuoi sostituire il caffè quotidiano</h3>
           <p>Bonjour Drink e Clearly Not Coffee sono più rassicuranti. Non chiedono di cambiare completamente abitudine: mantieni la tazza del mattino, ma provi una bevanda meno aggressiva. Bonjour Drink è più morbida e accessibile, Clearly è più diretto sul concetto “Not Coffee”.</p>
           <h3>Se vuoi restare vicino al gusto del caffè</h3>
@@ -168,10 +168,10 @@ const productSchema = (p: typeof config.products[number]) => ({
         </section>
 
         <ComparisonTable title="Guida rapida per scegliere" headers={[{label:'Profilo'}, {label:'Migliore opzione'}]} rows={[
-          { cells: ['<span class="table-fit">🏆 Miglior fit caffè ai funghi</span><span class="table-muted"> Estratti, coerenza e credibilità</span>', productLink('French Mush', '✅ French Mush')], highlight: true },
+          { cells: ['<span class="table-fit">🏆 Miglior fit caffè ai funghi</span><span class="table-muted"> Focus, formula e adattogeni</span>', productLink('Mush N Go', '✅ Mush N Go')], highlight: true },
+          { cells: ['<span class="table-fit">🍄 Alternativa tecnica</span><span class="table-muted"> Estratti, coerenza e credibilità</span>', productLink('French Mush', '✅ French Mush') ] },
           { cells: ['<span class="table-fit">☕ Più facile per iniziare</span><span class="table-muted"> Bevanda morbida e routine quotidiana</span>', productLink('Bonjour Drink', '✅ Bonjour Drink') ] },
           { cells: ['<span class="table-fit">🌿 Miglior alternativa Not Coffee</span><span class="table-muted"> Ridurre il caffè senza perdere il rituale</span>', productLink('Clearly', '✅ Clearly Not Coffee') ] },
-          { cells: ['<span class="table-fit">🧠 Formula più focus</span><span class="table-muted"> Concentrazione e adattogeni</span>', productLink('Mush N Go', '✅ Mush N Go') ] },
           { cells: ['<span class="table-fit">⚡ Super coffee accessibile</span><span class="table-muted"> Prezzo e praticità</span>', productLink('Drink Dyna', '✅ Drink Dyna') ] },
           { cells: ['<span class="table-fit">🔎 Mushroom coffee da confrontare</span><span class="table-muted"> Utile per completare il panorama</span>', productLink('Upraising', '✅ Upraising') ] },
         ]} />
@@ -186,13 +186,13 @@ const productSchema = (p: typeof config.products[number]) => ({
         <section id="prezzo" class="rich-text seo-guide">
           <h2>Prezzo, coupon e disponibilità</h2>
           <p>In questa categoria bisogna guardare il prezzo per tazza, non solo il prezzo del barattolo. Un prodotto da 30 o 40 euro può essere corretto se offre porzioni reali, ingredienti di qualità e una formula coerente. Bisogna anche capire se lo sconto arriva da un coupon, da un bundle o da una sottoscrizione. Il coupon aiuta la decisione, ma non deve sostituire il criterio principale: formula, uso e fiducia.</p>
-          <p>French Mush guadagna il primo posto perché unisce verticalità e codice promo. Bonjour Drink è molto forte per il pubblico che vuole iniziare senza complicarsi. Clearly è competitiva per chi cerca proprio una alternativa al caffè. Mush N Go può giustificare il prezzo se il focus è la concentrazione. Dyna e Upraising completano il confronto per profili più specifici.</p>
+          <p>Mush N Go guadagna il primo posto perché unisce formula orientata al focus, funghi funzionali e link diretto per il mercato italiano. French Mush resta molto coerente sul lato tecnico, Bonjour Drink è forte per chi vuole iniziare senza complicarsi e Clearly è competitiva per chi cerca una alternativa semplice al caffè. Dyna e Upraising completano il confronto per profili più specifici.</p>
         </section>
 
         <section id="verdetto" class="rich-text seo-guide">
           <h2>Verdetto finale</h2>
-          <p><strong>French Mush è la nostra raccomandazione principale</strong> per la prima pagina di caffe-ai-funghi.com. È la scelta più coerente con l’intenzione “caffè ai funghi”, perché il brand è specializzato, la proposta è leggibile e il prodotto resta allineato con il mondo degli estratti funzionali.</p>
-          <p><strong>Bonjour Drink</strong> è la migliore scelta per iniziare senza frizione, soprattutto se l’obiettivo è ridurre il caffè classico. <strong>Clearly Not Coffee</strong> è ideale per chi vuole una alternativa moderna e semplice. <strong>Mush N Go</strong> parla a chi cerca più focus. <strong>Drink Dyna</strong> e <strong>Upraising</strong> servono a coprire opzioni più pratiche o più vicine al mushroom coffee internazionale.</p>
+          <p><strong>Mush N Go è la nostra raccomandazione principale</strong> per la prima pagina di caffe-ai-funghi.com. È la scelta più coerente se cerchi un caffè ai funghi orientato a focus, produttività e ingredienti funzionali, con un percorso d’acquisto diretto in italiano.</p>
+          <p><strong>French Mush</strong> resta una alternativa tecnica forte. <strong>Bonjour Drink</strong> è la migliore scelta per iniziare senza frizione, soprattutto se l’obiettivo è ridurre il caffè classico. <strong>Clearly Not Coffee</strong> è ideale per chi vuole una alternativa moderna e semplice. <strong>Drink Dyna</strong> e <strong>Upraising</strong> servono a coprire opzioni più pratiche o più vicine al mushroom coffee internazionale.</p>
         </section>
 
         <AuthorBioCard />
@@ -200,7 +200,7 @@ const productSchema = (p: typeof config.products[number]) => ({
         
         <section id="punti-chiave" class="rich-text keyword-box">
           <h2>Punti da chiarire: controindicazioni, recensioni e miglior caffè ai funghi</h2>
-          <p>Prima di comprare, conviene chiarire quattro aspetti: <strong>caffè ai funghi controindicazioni</strong>, <strong>miglior caffè ai funghi</strong>, <strong>Bonjour Drink recensioni</strong> e <strong>French Mush</strong>. Per questo la classifica dà peso a ingredienti, gusto, caffeina, prezzo, trasparenza e coerenza d’uso quotidiano.</p>
+          <p>Prima di comprare, conviene chiarire quattro aspetti: <strong>caffè ai funghi controindicazioni</strong>, <strong>miglior caffè ai funghi</strong>, <strong>Mush N Go</strong>, <strong>Bonjour Drink recensioni</strong> e <strong>French Mush</strong>. Per questo la classifica dà peso a ingredienti, gusto, caffeina, prezzo, trasparenza e coerenza d’uso quotidiano.</p>
           <p>Sulle controindicazioni, la posizione corretta resta prudente: attenzione a sensibilità digestive, gravidanza, allattamento, farmaci o patologie. Il termine ganoderma può essere pertinente quando si parla di Reishi, ma va citato solo come famiglia di funghi funzionali, senza trasformarlo in promessa medica. Approfondisci nella nostra pagina dedicata alle <a href="/caffe-ai-funghi-controindicazioni/">controindicazioni del caffè ai funghi</a>.</p>
         </section>
 

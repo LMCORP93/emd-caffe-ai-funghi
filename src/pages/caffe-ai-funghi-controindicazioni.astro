@@ -17,8 +17,8 @@ import ArticleGrid from '@/components/ArticleGrid.astro';
 const topProduct = config.products[0];
 const contraindicationsBanner = '/images/content/caffe-ai-funghi-controindicazioni-banner.webp';
 const bodyToleranceImage = '/images/content/caffe-ai-funghi-corpo-tolleranza.webp';
-const pageTitle = 'French Mush controindicazioni: caffeina, stomaco e prudenza';
-const pageDescription = 'French Mush e caffè ai funghi: controindicazioni, caffeina, stomaco, farmaci, gravidanza e criteri prudenti prima di scegliere.';
+const pageTitle = 'Mush N Go controindicazioni: caffeina, stomaco e prudenza';
+const pageDescription = 'Mush N Go e caffè ai funghi: controindicazioni, caffeina, stomaco, farmaci, gravidanza e criteri prudenti prima di scegliere.';
 
 const tocItems = [
   { id: 'sintesi', label: 'Sintesi' },
@@ -37,13 +37,13 @@ const tocItems = [
 
 const cautiousProducts = [
   {
-    ...config.products.find((item) => item.brand === 'French Mush')!,
+    ...config.products.find((item) => item.brand === 'Mush N Go')!,
     rank: 1,
-    description: 'French Mush è la scelta più coerente per chi cerca un vero caffè ai funghi in Italia: vende online, resta centrato sui funghi funzionali e non si limita a essere una alternativa generica al caffè.\n\nSu una pagina dedicata alle precauzioni, la raccomandazione resta prudente: leggere ingredienti, controllare la presenza di caffeina, iniziare gradualmente e chiedere un parere professionale in caso di farmaci, gravidanza, patologie croniche o forte sensibilità agli integratori.'
+    description: 'Mush N Go è la scelta più coerente per chi cerca un vero caffè ai funghi in Italia: il prodotto Super Café è accessibile dal sito italiano e resta centrato su funghi funzionali e routine focus.\n\nSu una pagina dedicata alle precauzioni, la raccomandazione resta prudente: leggere ingredienti, controllare la presenza di caffeina, iniziare gradualmente e chiedere un parere professionale in caso di farmaci, gravidanza, patologie croniche o forte sensibilità agli integratori.'
   }
 ];
 
-const frenchMushProduct = cautiousProducts[0];
+const mushNGoProduct = cautiousProducts[0];
 
 const faq = [
   { question: 'Il caffè ai funghi è pericoloso?', answer: 'Per un adulto sano, un uso moderato può essere ben tollerato. Non è però una bevanda neutra per tutti: bisogna controllare caffeina, estratti di funghi, adattogeni, farmaci assunti e sensibilità digestiva personale.' },
@@ -52,7 +52,7 @@ const faq = [
   { question: 'Il caffè ai funghi contiene caffeina?', answer: 'Dipende dal prodotto. Alcune formule sono alternative al caffè e non contengono caffeina classica; altre includono caffè, tè, matcha o stimolanti. La sola parola “funghi” non significa automaticamente senza caffeina.' },
   { question: 'Chi dovrebbe chiedere un parere medico prima di provarlo?', answer: 'Persone in gravidanza o allattamento, chi assume farmaci, chi ha patologie croniche, malattie autoimmuni, disturbi epatici o renali, allergie ai funghi, forte sensibilità digestiva o reazioni frequenti agli integratori.' },
   { question: 'Come iniziare in modo prudente?', answer: 'Scegli una formula semplice, leggibile e preferibilmente non troppo stimolante. Inizia con mezza dose o una dose bassa, al mattino, per alcuni giorni. Non introdurre altri integratori nello stesso periodo, così capisci meglio la tua tolleranza.' },
-  { question: 'French Mush è adatto se cerco caffè ai funghi ma temo le controindicazioni?', answer: 'French Mush è interessante perché resta centrato sui funghi funzionali e sul mercato italiano. Va comunque valutato con prudenza: ingredienti, caffeina, dose, stomaco, farmaci e situazione personale contano più del nome del prodotto.' },
+  { question: 'Mush N Go è adatto se cerco caffè ai funghi ma temo le controindicazioni?', answer: 'Mush N Go è interessante perché resta centrato sui funghi funzionali e propone un acquisto diretto in italiano. Va comunque valutato con prudenza: ingredienti, caffeina, dose, stomaco, farmaci e situazione personale contano più del nome del prodotto.' },
   { question: 'Reishi e Ganoderma sono la stessa cosa?', answer: 'Ganoderma lucidum è il nome scientifico spesso associato al Reishi. Se una formula contiene Reishi/Ganoderma, valuta dose, tolleranza, farmaci e condizioni personali, soprattutto in caso di trattamenti o fragilità mediche.' },
 ];
 
@@ -134,7 +134,7 @@ const productLink = (brand: string, label = brand) => {
         <TableOfContents items={tocItems} />
 
         <div class="template-promo-block">
-          <ReviewPromoCard product={frenchMushProduct} />
+          <ReviewPromoCard product={mushNGoProduct} />
         </div>
 
         <section id="pericoloso" class="rich-text seo-guide">
@@ -172,7 +172,7 @@ const productLink = (brand: string, label = brand) => {
 </figure>
 
         <div class="template-promo-block">
-          <ReviewPromoCard product={frenchMushProduct} />
+          <ReviewPromoCard product={mushNGoProduct} />
         </div>
 
         <section id="gravidanza" class="rich-text seo-guide">
@@ -215,15 +215,15 @@ const productLink = (brand: string, label = brand) => {
 
         <section class="rich-text seo-guide promo-section">
           <h2>La raccomandazione principale per l’Italia</h2>
-          <p><strong>French Mush</strong> è l’opzione più coerente da valutare se cerchi un vero caffè ai funghi disponibile per l’Italia. La scelta resta prudente: leggere gli ingredienti, controllare la caffeina e iniziare gradualmente, soprattutto in caso di sensibilità digestiva, farmaci o dubbi personali.</p>
+          <p><strong>Mush N Go</strong> è l’opzione più coerente da valutare se cerchi un vero caffè ai funghi disponibile per l’Italia. La scelta resta prudente: leggere gli ingredienti, controllare la caffeina e iniziare gradualmente, soprattutto in caso di sensibilità digestiva, farmaci o dubbi personali.</p>
         </section>
         <div class="template-promo-block">
-          <ReviewPromoCard product={frenchMushProduct} />
+          <ReviewPromoCard product={mushNGoProduct} />
         </div>
 
         <section id="scelte" class="rich-text seo-guide">
           <h2>Quali opzioni scegliere se vuoi restare prudente</h2>
-          <p>Su questa pagina teniamo una sola raccomandazione commerciale: <strong>French Mush</strong>. È l’opzione più allineata a chi cerca un caffè ai funghi concreto, con una lettura prudente di caffeina, farmaci, stomaco e funghi funzionali. Le altre marche restano nel comparativo generale, ma qui l’obiettivo è non disperdere il lettore.</p>
+          <p>Su questa pagina teniamo una sola raccomandazione commerciale: <strong>Mush N Go</strong>. È l’opzione più allineata a chi cerca un caffè ai funghi concreto, con una lettura prudente di caffeina, farmaci, stomaco e funghi funzionali. Le altre marche restano nel comparativo generale, ma qui l’obiettivo è non disperdere il lettore.</p>
           <p>Se vuoi confrontare più formule prima di decidere, torna al <a href="/">comparativo principale dei caffè ai funghi</a>: lì trovi classifica, ingredienti, gusto, prezzo e alternative disponibili in Italia. Per capire meglio l'offerta italiana, leggi anche la nostra guida al <a href="/mushroom-coffee-italia/">mushroom coffee in Italia</a>.</p>
         </section>
 
@@ -237,9 +237,9 @@ const productLink = (brand: string, label = brand) => {
           <h2>Scelta rapida secondo il tuo caso</h2>
         </section>
         <ComparisonTable title="Prodotto e profilo prudente" headers={[{label:'Caso'}, {label:'Scelta più logica'}]} rows={[
-          { cells: ['<span class="table-fit">🍄 Voglio un vero caffè ai funghi</span><span class="table-muted"> Partner principale, vendita in Italia, formula più coerente</span>', productLink('French Mush', '✅ French Mush')], highlight: true },
-          { cells: ['<span class="table-fit">☕ Voglio provare senza esagerare</span><span class="table-muted"> Iniziare basso, osservare tolleranza e caffeina</span>', productLink('French Mush', '✅ French Mush con uso progressivo') ] },
-          { cells: ['<span class="table-fit">💊 Ho farmaci o patologie</span><span class="table-muted"> Prudenza prima dell’acquisto</span>', 'Prima chiedere parere medico, poi valutare French Mush'] },
+          { cells: ['<span class="table-fit">🍄 Voglio un vero caffè ai funghi</span><span class="table-muted"> Partner principale, acquisto in italiano, formula più coerente</span>', productLink('Mush N Go', '✅ Mush N Go')], highlight: true },
+          { cells: ['<span class="table-fit">☕ Voglio provare senza esagerare</span><span class="table-muted"> Iniziare basso, osservare tolleranza e caffeina</span>', productLink('Mush N Go', '✅ Mush N Go con uso progressivo') ] },
+          { cells: ['<span class="table-fit">💊 Ho farmaci o patologie</span><span class="table-muted"> Prudenza prima dell’acquisto</span>', 'Prima chiedere parere medico, poi valutare Mush N Go'] },
         ]} />
 
         <section id="medico" class="rich-text seo-guide">

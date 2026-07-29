@@ -22,12 +22,42 @@ export interface SiteConfig {
 const products: Product[] = [
   {
     rank: 1,
+    name: 'Super Café',
+    brand: 'Mush N Go',
+    slug: 'mush-n-go',
+    image: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68dd05ab94d90e0a289b2ccc_image%201%20(1).avif',
+    brandLogo: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68dd03c74aa741ba6fbc75d7_Logo%20mush%20n%20go.svg',
+    rating: 9.7,
+    reviewCount: 170,
+    promoCode: 'LMC15',
+    promoPercent: 15,
+    originalPrice: '33,90 €',
+    discountPrice: '28,82 €',
+    affiliateLink: 'https://mushngo.com/it/products/super-cafe?ref=lmc',
+    origin: '🇫🇷 Francia',
+    availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
+    productType: 'Super café funzionale con funghi adattogeni',
+    pros: [
+      'Formula più orientata a focus, produttività ed energia mentale',
+      'Include Lion’s Mane, Cordyceps, Chaga e piante adattogene',
+      'Buona opzione per utenti già interessati ai funghi funzionali',
+      'Brand specializzato, con codice promo verificato'
+    ],
+    cons: [
+      'Può risultare più intensa per un principiante',
+      'Meno morbida come prima alternativa al caffè',
+      'Il posizionamento è più performance che piacere da colazione'
+    ],
+    description: 'Mush N Go è una marca più tecnica, orientata a focus, produttività e performance mentale. Il suo universo parla a chi cerca una bevanda funzionale con ingredienti adattogeni, più che una semplice alternativa dolce al caffè del mattino.\n\nSuper Café è il prodotto più adatto a chi associa il caffè ai funghi alla concentrazione. La formula mette in evidenza ingredienti come Lion’s Mane, Cordyceps o Chaga, con una lettura più vicina al biohacking che alla bevanda da piacere. È una scelta pertinente per lavorare, studiare o strutturare una routine mattutina più funzionale.\n\nNel confronto, Mush N Go è meno immediato per un principiante, ma molto interessante per chi cerca soprattutto l’effetto focus. Se il criterio principale è la semplicità, Bonjour Drink o Clearly sono più accessibili. Se il criterio è la formula, Mush N Go diventa molto più convincente.'
+  },
+  {
+    rank: 2,
     name: 'Boisson Boost',
     brand: 'French Mush',
     slug: 'french-mush',
     image: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68df9c4752b86513fd872399_BOOST_French_Mush.avif',
     brandLogo: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68df99d27d2df19761dbfa26_Group_1.svg',
-    rating: 9.6,
+    rating: 9.5,
     reviewCount: 85,
     promoCode: 'LMC',
     promoPercent: 12,
@@ -51,13 +81,13 @@ const products: Product[] = [
     description: 'French Mush è una marca specializzata nelle bevande funzionali a base di funghi adattogeni. Il suo punto forte è la chiarezza: non prova a imitare un espresso italiano, ma propone una routine più morbida, pensata per chi cerca energia stabile, concentrazione e ingredienti come Lion’s Mane, Reishi, Cordyceps o Chaga.\n\nBoisson Boost è il prodotto più rappresentativo della marca per chi vuole scoprire il caffè ai funghi in modo serio. Si prepara facilmente, si integra bene al mattino e punta su un profilo più funzionale che gourmand. È una scelta interessante se vuoi una bevanda calda con un vero focus sugli estratti, non solo un prodotto che usa il trend “mushroom coffee” come argomento marketing.\n\nNel confronto, French Mush si distingue per la coerenza tra marca, formula e promessa. È meno adatto a chi cerca il gusto di un caffè da bar, ma molto pertinente per chi vuole provare una bevanda funzionale quotidiana con un posizionamento premium e un codice promo disponibile.'
   },
   {
-    rank: 2,
+    rank: 3,
     name: 'Super Café',
     brand: 'Bonjour Drink',
     slug: 'bonjour-drink',
     image: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68d7c7d22051cb9faf0ade48_bonjour%20drink%202e%CC%80me%20image.avif',
     brandLogo: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68d666ee3daf1b2e78ab7a9a_logo%20Bonjour%20Drink.svg',
-    rating: 9.5,
+    rating: 9.4,
     reviewCount: 320,
     promoCode: 'LMC20',
     promoPercent: 20,
@@ -81,7 +111,7 @@ const products: Product[] = [
     description: 'Bonjour Drink si presenta come una marca accessibile per chi vuole cambiare la routine del caffè senza perdere il piacere della tazza calda. Il tono è semplice, rassicurante e più lifestyle rispetto alle marche molto tecniche: questo la rende facile da capire anche per chi scopre appena le alternative al caffè.\n\nSuper Café è pensato per sostituire o alleggerire il caffè quotidiano. Il prodotto punta su un gusto tostato, una preparazione rapida e una sensazione più dolce per lo stomaco. È una buona opzione se vuoi ridurre nervosismo, acidità o consumo di caffeina senza passare subito a una formula troppo orientata integratori.\n\nNel confronto, Bonjour Drink è una delle scelte più facili per iniziare. È meno centrata sui funghi rispetto a French Mush, ma compensa con un’esperienza più immediata, un’immagine molto chiara e un prezzo interessante dopo codice promo.'
   },
   {
-    rank: 3,
+    rank: 4,
     name: 'Not Coffee',
     brand: 'Clearly',
     slug: 'clearly-not-coffee',
@@ -109,36 +139,6 @@ const products: Product[] = [
       'Non soddisfa chi vuole caffeina forte'
     ],
     description: 'Clearly lavora su un posizionamento molto diretto: offrire una bevanda “Not Coffee” per chi vuole cambiare abitudine senza cercare una copia del caffè. La marca parla a chi associa il caffè classico a nervosismo, acidità o cali di energia, e vuole una soluzione più leggera per la routine quotidiana.\n\nNot Coffee è interessante perché non richiede di conoscere ogni fungo adattogeno o ogni ingrediente funzionale. Il prodotto si capisce velocemente: una bevanda alternativa, moderna, pronta da integrare al mattino o durante la giornata. Il valore sta tanto nella semplicità del concetto quanto nella promessa di una routine più stabile.\n\nNel confronto, Clearly è molto forte per chi vuole ridurre il caffè classico senza entrare in un universo troppo tecnico. Il prodotto resta meno verticalizzato sui funghi rispetto ai primi prodotti, ma il suo posizionamento è chiaro, utile e facile da integrare nell’uso quotidiano.'
-  },
-  {
-    rank: 4,
-    name: 'Brainstoorm',
-    brand: 'Mush N Go',
-    slug: 'mush-n-go',
-    image: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68dd05ab94d90e0a289b2ccc_image%201%20(1).avif',
-    brandLogo: 'https://cdn.prod.website-files.com/68c02c2c477fdd467e6e08a1/68dd03c74aa741ba6fbc75d7_Logo%20mush%20n%20go.svg',
-    rating: 9.0,
-    reviewCount: 170,
-    promoCode: 'LMC15',
-    promoPercent: 15,
-    originalPrice: '33,90 €',
-    discountPrice: '28,82 €',
-    affiliateLink: 'https://taap.it/mushngo-brainstorm',
-    origin: '🇫🇷 Francia',
-    availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
-    productType: 'Polvere concentrata',
-    pros: [
-      'Formula più orientata a focus, produttività ed energia mentale',
-      'Include Lion’s Mane, Cordyceps, Chaga e piante adattogene',
-      'Buona opzione per utenti già interessati ai funghi funzionali',
-      'Brand specializzato, con codice promo verificato'
-    ],
-    cons: [
-      'Può risultare più intensa per un principiante',
-      'Meno morbida come prima alternativa al caffè',
-      'Il posizionamento è più performance che piacere da colazione'
-    ],
-    description: 'Mush N Go è una marca più tecnica, orientata a focus, produttività e performance mentale. Il suo universo parla a chi cerca una bevanda funzionale con ingredienti adattogeni, più che una semplice alternativa dolce al caffè del mattino.\n\nBrainstoorm è il prodotto più adatto a chi associa il caffè ai funghi alla concentrazione. La formula mette in evidenza ingredienti come Lion’s Mane, Cordyceps o Chaga, con una lettura più vicina al biohacking che alla bevanda da piacere. È una scelta pertinente per lavorare, studiare o strutturare una routine mattutina più funzionale.\n\nNel confronto, Mush N Go è meno immediato per un principiante, ma molto interessante per chi cerca soprattutto l’effetto focus. Se il criterio principale è la semplicità, Bonjour Drink o Clearly sono più accessibili. Se il criterio è la formula, Mush N Go diventa molto più convincente.'
   },
   {
     rank: 5,
@@ -200,14 +200,15 @@ const products: Product[] = [
     ],
     description: 'Upraising si avvicina di più all’immaginario internazionale del mushroom coffee. La marca parla a un pubblico già curioso di bevande funzionali, routine mentale e alternative moderne al caffè classico, con un posizionamento meno tradizionale e più orientato allo stato di concentrazione.\n\nFlow State è interessante perché porta nel confronto un profilo diverso: non solo una bevanda calda per sostituire il caffè, ma un prodotto pensato per accompagnare energia mentale, attenzione e rituale quotidiano. È una proposta adatta a chi cerca qualcosa di più internazionale e meno vicino al semplice gusto da colazione.\n\nNel confronto, Upraising completa bene la selezione. Non è la scelta più immediata per tutti, ma aiuta a coprire una categoria importante del mercato: il mushroom coffee pensato come routine funzionale, più che come alternativa classica all’espresso.'
   }
+
 ];
 
 const config: SiteConfig = {
   domain: 'https://caffe-ai-funghi.com',
   isIndexable: true,
   siteName: 'Caffè ai Funghi',
-  brand: 'French Mush',
-  product: 'Boisson Boost',
+  brand: 'Mush N Go',
+  product: 'Super Café',
   productCategory: 'Caffè ai funghi e bevande adattogene',
   productFormat: 'Polvere solubile',
   tagline: 'Comparativo italiano dei migliori caffè ai funghi e alternative funzionali al caffè.',
@@ -216,22 +217,22 @@ const config: SiteConfig = {
   originalPrice: products[0].originalPrice,
   discountPrice: products[0].discountPrice,
   rating: products[0].rating,
-  author: { name: 'Tim', avatar: '/author-avatar.png', bio: 'Analista di integratori, bevande funzionali e nutrizione pratica per LMC dal 2024.' },
+  author: { name: 'Tim', avatar: '/author-avatar.png', bio: 'Analista di integratori, bevande funzionali e nutrizione pratica dal 2024.' },
   seo: {
     title: 'Miglior caffè ai funghi 2026: Top 6 in Italia',
-    description: 'Comparativo italiano dei migliori caffè ai funghi: French Mush, Bonjour Drink, Clearly Not Coffee, Mush N Go, Dyna e Upraising.',
+    description: 'Comparativo italiano dei migliori caffè ai funghi: Mush N Go, French Mush, Bonjour Drink, Clearly Not Coffee, Dyna e Upraising.',
     ogImage: 'https://caffe-ai-funghi.com/og-image.jpg',
   },
   analyticsMeasurementId: 'G-CEC87CDXK4',
   breadcrumbs: [{ label: 'Comparativo caffè ai funghi', href: '/' }],
   quickSummary: {
-    assets: ['Top 6 focalizzato su caffè ai funghi e alternative al caffè', 'French Mush primo per coerenza con funghi funzionali ed estratti', 'Bonjour Drink secondo per facilità, gusto e routine quotidiana', 'Clearly Not Coffee terzo per chi vuole ridurre il caffè classico'],
+    assets: ['Top 6 focalizzato su caffè ai funghi e alternative al caffè', 'Mush N Go primo per focus, formula e funghi funzionali', 'French Mush secondo per coerenza con funghi funzionali ed estratti', 'Bonjour Drink terzo per facilità, gusto e routine quotidiana'],
     considerations: ['Il mercato italiano è ancora giovane', 'Non tutti i prodotti sono veri caffè classici', 'Prezzo, coupon e disponibilità possono cambiare secondo paese'],
   },
   pros: ['Comparativo diretto per scegliere velocemente', 'Include opzioni morbide, tecniche e più vicine al caffè', 'Priorità a uso reale, formula, prezzo e chiarezza commerciale'],
   cons: ['Alcuni brand non sono ancora molto conosciuti in Italia', 'La categoria resta diversa dal caffè espresso tradizionale'],
   faq: [
-    { question: 'Qual è il miglior caffè ai funghi?', answer: 'Per questa prima versione scegliamo French Mush come numero uno per coerenza con i funghi funzionali, qualità percepita e chiarezza. Bonjour Drink è la scelta più semplice per iniziare, mentre Clearly Not Coffee è ottimo per chi vuole ridurre il caffè classico.' },
+    { question: 'Qual è il miglior caffè ai funghi?', answer: 'Mush N Go è la scelta numero uno per chi cerca un caffè ai funghi focalizzato su formula, concentrazione e routine funzionale. French Mush resta una valida alternativa tecnica, mentre Bonjour Drink è la scelta più semplice per iniziare.' },
     { question: 'Il caffè ai funghi contiene caffeina?', answer: 'Dipende dal prodotto. Alcune formule sono alternative al caffè e non puntano sulla caffeina, altre mantengono una base più simile al caffè. Bisogna leggere etichetta e dosaggio prima di acquistare.' },
     { question: 'A cosa serve il caffè ai funghi?', answer: 'Viene cercato soprattutto per energia più stabile, concentrazione, rituale mattutino più leggero e minore nervosismo rispetto al caffè tradizionale. Non va però presentato come una cura medica.' },
     { question: 'Ci sono controindicazioni?', answer: 'Se assumi farmaci, sei in gravidanza, hai patologie autoimmuni o sei molto sensibile alla caffeina, è meglio chiedere il parere di un professionista sanitario. Per iniziare, una dose ridotta è spesso più prudente.' },
