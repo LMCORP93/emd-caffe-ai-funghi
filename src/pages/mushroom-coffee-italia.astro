@@ -143,6 +143,13 @@ const productLink = (brand: string, label = brand) => {
           <p>Questa pagina serve da ponte: intercetta l’intenzione inglese “mushroom coffee” e porta l’utente verso la selezione italiana, dove il confronto è più utile per comprare.</p>
         </section>
 
+
+                <ContentImage
+          src="/images/content/caffe-ai-funghi-corpo-tolleranza.webp"
+          alt="Routine italiana con bevanda funzionale ai funghi"
+          caption="Il mushroom coffee va valutato come rituale quotidiano, non come semplice sostituto del caffè."
+        />
+
         <ComparisonTable title="Come leggere il mercato italiano" headers={[{label:'Situazione'}, {label:'Cosa significa per l’acquisto'}]} rows={[
           { cells: ['<span class="table-fit">🇮🇹 Categoria ancora giovane</span><span class="table-muted"> Poche marche native italiane molto forti</span>', 'Conviene guardare brand europei affidabili che spediscono in Italia'], highlight: true },
           { cells: ['<span class="table-fit">☕ Cultura espresso dominante</span><span class="table-muted"> Aspettative di gusto molto alte</span>', 'Non aspettarti sempre un gusto da bar: valuta la routine completa'] },
@@ -175,6 +182,14 @@ const productLink = (brand: string, label = brand) => {
           { cells: ['<span class="table-fit">🔎 Upraising</span><span class="table-muted"> Più vicino al mushroom coffee internazionale</span>', productLink('Upraising', 'Profilo internazionale') ] },
         ]} />
 
+
+
+        <ContentImage
+          src="/images/content/emd-cafe-champignons-banner.webp"
+          alt="Funghi funzionali e ingredienti naturali su fondo caldo"
+          caption="Gli ingredienti sono il primo filtro per scegliere una formula seria e coerente con l’uso quotidiano."
+        />
+
         <section id="scegliere" class="rich-text seo-guide">
           <h2>Come scegliere un buon prodotto</h2>
           <h3>1. Capire se contiene vero caffè</h3>
@@ -195,6 +210,14 @@ const productLink = (brand: string, label = brand) => {
           <p>Ultimo punto: attenzione alle promesse troppo forti. Una marca seria spiega ingredienti e uso quotidiano, non vende soluzioni miracolose. Per questo nel comparativo italiano diamo più peso a coerenza, disponibilità e fiducia che a slogan generici. Prima di acquistare, consulta anche le <a href="/caffe-ai-funghi-controindicazioni/">controindicazioni del caffè ai funghi</a> per un acquisto più consapevole.</p>
         </section>
 
+
+
+        <ContentImage
+          src="/images/content/caffe-ai-funghi-controindicazioni-banner.webp"
+          alt="Ingredienti e precauzioni per scegliere un mushroom coffee"
+          caption="Anche in Italia, la scelta deve restare prudente sur caffeina, adattogeni e sensibilità personale."
+        />
+
         <section id="alternative-caffe" class="rich-text seo-guide">
           <h2>Perché alcuni prodotti sono più alternative al caffè che veri caffè</h2>
           <p>Molte marche non cercano di copiare un espresso. Cercano di sostituire il momento: tazza calda, rituale mattutino, gusto tostato, energia più stabile e meno dipendenza dalla caffeina. Questo spiega perché alcuni prodotti usano cacao, orzo, cicoria o spezie invece di una base di caffè tradizionale.</p>
@@ -211,25 +234,6 @@ const productLink = (brand: string, label = brand) => {
           <p>Se vuoi passare dalla definizione all’acquisto, il passaggio più utile è il comparativo principale italiano. Lì trovi ranking, prodotti, prezzi, coupon, pro/contro e profili d’uso. Per noi, <strong>Mush N Go</strong> resta la prima opzione da mettere in avanti per l’Italia perché combina formula focus, funghi funzionali e pagina prodotto in italiano.</p>
           <p><a class="primary-inline-cta" href="/">Vedi il comparativo caffè ai funghi in Italia</a></p>
         </section>
-
-                <ContentImage
-          src="/images/content/caffe-ai-funghi-corpo-tolleranza.webp"
-          alt="Routine italiana con bevanda funzionale ai funghi"
-          caption="Il mushroom coffee va valutato come rituale quotidiano, non come semplice sostituto del caffè."
-        />
-
-        <ContentImage
-          src="/images/content/emd-cafe-champignons-banner.webp"
-          alt="Funghi funzionali e ingredienti naturali su fondo caldo"
-          caption="Gli ingredienti sono il primo filtro per scegliere una formula seria e coerente con l’uso quotidiano."
-        />
-
-        <ContentImage
-          src="/images/content/caffe-ai-funghi-controindicazioni-banner.webp"
-          alt="Ingredienti e precauzioni per scegliere un mushroom coffee"
-          caption="Anche in Italia, la scelta deve restare prudente sur caffeina, adattogeni e sensibilità personale."
-        />
-
         <AuthorBioCard />
 
         <section id="faq" class="faq-section"><FAQSection faq={faq} title="Domande frequenti" /></section>
@@ -246,7 +250,9 @@ const productLink = (brand: string, label = brand) => {
   .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
   .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 1rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
   .seo-guide p { margin-bottom: 1rem; line-height: 1.625; color: #444; }
-  .template-promo-block { margin: 1.25rem 0 1.75rem; }
+  .template-promo-block { margin: 2rem 0 2.5rem; }
+  .template-promo-block + .seo-guide { margin-top: 2.75rem; }
+  .body-image-card, .content-image, figure { margin: 2rem 0; }
   .final-bridge { background: #f4f2ec; border: 0; border-radius: 1.25rem; padding: 2rem; }
   .primary-inline-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: .75rem; padding: .9rem 1.25rem; border-radius: 999px; background: #ef7a1a; color: white; font-weight: 700; text-decoration: none; }
   .primary-inline-cta:hover { background: #d9650e; color: white; }
