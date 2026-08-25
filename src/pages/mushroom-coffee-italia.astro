@@ -89,7 +89,7 @@ const productLink = (brand: string, label = brand) => {
     showOfferBlock={false}
   />
 
-  <main style="background-color:#ffffff;">
+  <main style="background-color:#fcfbf7;">
     <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
       <div class="content-column">
         <section id="sintesi">
@@ -134,7 +134,7 @@ const productLink = (brand: string, label = brand) => {
           <p>Un prodotto può chiamarsi mushroom coffee anche se non assomiglia a un espresso. Può essere più vicino a una bevanda cacao-orzo, a un latte funzionale o a un “not coffee”. Per questo, quando si sceglie, bisogna guardare la formula: base caffè sì/no, caffeina sì/no, funghi presenti, dosi, gusto, prezzo per tazza e disponibilità in Italia.</p>
         </section>
 
-        <InnerNote emoji="📌" text="Il punto non è scegliere il nome più corretto, ma capire cosa stai comprando: vero caffè con funghi, alternativa al caffè o bevanda funzionale ispirata al mushroom coffee." />
+        <InnerNote emoji="" text="Il punto non è scegliere il nome più corretto, ma capire cosa stai comprando: vero caffè con funghi, alternativa al caffè o bevanda funzionale ispirata al mushroom coffee." />
 
         <section id="mercato-italia" class="rich-text seo-guide">
           <h2>Stato del mercato in Italia</h2>
@@ -151,10 +151,10 @@ const productLink = (brand: string, label = brand) => {
         />
 
         <ComparisonTable title="Come leggere il mercato italiano" headers={[{label:'Situazione'}, {label:'Cosa significa per l’acquisto'}]} rows={[
-          { cells: ['<span class="table-fit">🇮🇹 Categoria ancora giovane</span><span class="table-muted"> Poche marche native italiane molto forti</span>', 'Conviene guardare brand europei affidabili che spediscono in Italia'], highlight: true },
+          { cells: ['<span class="table-fit">Categoria ancora giovane</span><span class="table-muted"> Poche marche native italiane molto forti</span>', 'Conviene guardare brand europei affidabili che spediscono in Italia'], highlight: true },
           { cells: ['<span class="table-fit">☕ Cultura espresso dominante</span><span class="table-muted"> Aspettative di gusto molto alte</span>', 'Non aspettarti sempre un gusto da bar: valuta la routine completa'] },
-          { cells: ['<span class="table-fit">🌍 Query spesso in inglese</span><span class="table-muted"> Trend importato da contenuti internazionali</span>', 'Cerca anche “caffè ai funghi” per trovare comparativi italiani'] },
-          { cells: ['<span class="table-fit">🛒 Acquisto soprattutto online</span><span class="table-muted"> Brand ufficiali, coupon, spedizione europea</span>', 'Verifica prezzo finale, consegna, resi e codice promo'] },
+          { cells: ['<span class="table-fit">Query spesso in inglese</span><span class="table-muted"> Trend importato da contenuti internazionali</span>', 'Cerca anche “caffè ai funghi” per trovare comparativi italiani'] },
+          { cells: ['<span class="table-fit">Acquisto soprattutto online</span><span class="table-muted"> Brand ufficiali, coupon, spedizione europea</span>', 'Verifica prezzo finale, consegna, resi e codice promo'] },
         ]} />
 
         <section id="acquistare" class="rich-text seo-guide">
@@ -173,13 +173,13 @@ const productLink = (brand: string, label = brand) => {
         </section>
 
         <ComparisonTable title="Marche europee e profilo d’uso" headers={[{label:'Marca'}, {label:'Perché guardarla'}]} rows={[
-          { cells: ['<span class="table-fit">🍄 Mush N Go</span><span class="table-muted"> Partner principale per l’Italia</span>', productLink('Mush N Go', 'Miglior fit caffè ai funghi')], highlight: true },
-          { cells: ['<span class="table-fit">🍄 French Mush</span><span class="table-muted"> Alternativa tecnica europea</span>', productLink('French Mush', 'Buona opzione tecnica') ] },
+          { cells: ['<span class="table-fit">Mush N Go</span><span class="table-muted"> Partner principale per l’Italia</span>', productLink('Mush N Go', 'Miglior fit caffè ai funghi')], highlight: true },
+          { cells: ['<span class="table-fit">French Mush</span><span class="table-muted"> Alternativa tecnica europea</span>', productLink('French Mush', 'Buona opzione tecnica') ] },
           { cells: ['<span class="table-fit">☕ Bonjour Drink</span><span class="table-muted"> Routine morbida, alternativa semplice</span>', productLink('Bonjour Drink', 'Buona scelta per iniziare') ] },
-          { cells: ['<span class="table-fit">🌿 Clearly Not Coffee</span><span class="table-muted"> Posizionamento “not coffee” molto chiaro</span>', productLink('Clearly', 'Alternativa moderna al caffè') ] },
-          { cells: ['<span class="table-fit">🧠 Mush N Go</span><span class="table-muted"> Formula più focus/adattogeni</span>', productLink('Mush N Go', 'Più tecnico e orientato focus') ] },
+          { cells: ['<span class="table-fit">Clearly Not Coffee</span><span class="table-muted"> Posizionamento “not coffee” molto chiaro</span>', productLink('Clearly', 'Alternativa moderna al caffè') ] },
+          { cells: ['<span class="table-fit">Mush N Go</span><span class="table-muted"> Formula più focus/adattogeni</span>', productLink('Mush N Go', 'Più tecnico e orientato focus') ] },
           { cells: ['<span class="table-fit">⚡ Drink Dyna</span><span class="table-muted"> Super coffee accessibile</span>', productLink('Drink Dyna', 'Opzione pratica da confrontare') ] },
-          { cells: ['<span class="table-fit">🔎 Upraising</span><span class="table-muted"> Più vicino al mushroom coffee internazionale</span>', productLink('Upraising', 'Profilo internazionale') ] },
+          { cells: ['<span class="table-fit">Upraising</span><span class="table-muted"> Più vicino al mushroom coffee internazionale</span>', productLink('Upraising', 'Profilo internazionale') ] },
         ]} />
 
 
@@ -247,7 +247,7 @@ const productLink = (brand: string, label = brand) => {
 </BaseLayout>
 
 <style>
-  .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide { margin-top: 3rem; }
   .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 1rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
   .seo-guide p { margin-bottom: 1rem; line-height: 1.625; color: #444; }
   .template-promo-block { margin: 2rem 0 2.5rem; }
@@ -256,5 +256,5 @@ const productLink = (brand: string, label = brand) => {
   .final-bridge { background: #f4f2ec; border: 0; border-radius: 1.25rem; padding: 2rem; }
   .primary-inline-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: .75rem; padding: .9rem 1.25rem; border-radius: 999px; background: #ef7a1a; color: white; font-weight: 700; text-decoration: none; }
   .primary-inline-cta:hover { background: #d9650e; color: white; }
-  .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .faq-section { margin-top: 3rem; }
 </style>

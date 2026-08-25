@@ -34,7 +34,7 @@ const products: Product[] = [
     originalPrice: '33,90 €',
     discountPrice: '28,82 €',
     affiliateLink: 'https://mushngo.com/it/products/super-cafe?ref=lmc',
-    origin: '🇫🇷 Francia',
+    origin: 'Francia',
     availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
     productType: 'Super café funzionale con funghi adattogeni',
     pros: [
@@ -64,7 +64,7 @@ const products: Product[] = [
     originalPrice: '32,00 €',
     discountPrice: '28,16 €',
     affiliateLink: 'https://taap.it/french-mush-boisson-boost',
-    origin: '🇫🇷 Francia',
+    origin: 'Francia',
     availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
     productType: 'Bevanda funzionale con estratti di funghi',
     pros: [
@@ -94,7 +94,7 @@ const products: Product[] = [
     originalPrice: '39,00 €',
     discountPrice: '31,20 €',
     affiliateLink: 'https://taap.it/bonjour-drink-lmc',
-    origin: '🇫🇷 Francia',
+    origin: 'Francia',
     availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
     productType: 'Polvere solubile senza caffeina',
     pros: [
@@ -124,7 +124,7 @@ const products: Product[] = [
     originalPrice: '30,00 €',
     discountPrice: '25,50 €',
     affiliateLink: 'https://taap.it/clearly-not-coffee',
-    origin: '🇳🇱 Paesi Bassi',
+    origin: 'Paesi Bassi',
     availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
     productType: 'Not Coffee / alternativa funzionale',
     pros: [
@@ -154,7 +154,7 @@ const products: Product[] = [
     originalPrice: '24,00 €',
     discountPrice: '21,60 €',
     affiliateLink: 'https://taap.it/Dyna-pack-decouverte-trio',
-    origin: '🇫🇷 Francia',
+    origin: 'Francia',
     availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
     productType: 'Super Coffee funzionale',
     pros: [
@@ -184,7 +184,7 @@ const products: Product[] = [
     originalPrice: '34,00 €',
     discountPrice: '30,60 €',
     affiliateLink: 'https://taap.it/uprising-full-color',
-    origin: '🇧🇪 Belgio',
+    origin: 'Belgio',
     availability: 'Consegna in Italia possibile; verificare le condizioni sul sito ufficiale',
     productType: 'Caffè ai funghi',
     pros: [

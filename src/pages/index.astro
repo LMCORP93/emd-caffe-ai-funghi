@@ -92,7 +92,7 @@ const productSchema = (p: typeof config.products[number]) => ({
     showOfferBlock={false}
   />
 
-  <main style="background-color:#ffffff;">
+  <main style="background-color:#fcfbf7;">
     <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
       <div class="content-column">
         <section id="introduzione">
@@ -155,7 +155,7 @@ const productSchema = (p: typeof config.products[number]) => ({
           <p>Il terzo criterio è stato l’equilibrio tra formula e promessa. Lion’s Mane viene spesso associato alla concentrazione, Cordyceps all’energia, Reishi al recupero e Chaga al supporto antiossidante. Ma il risultato finale dipende da dosi, estratti, presenza o assenza di caffeina, gusto, prezzo per tazza e tolleranza digestiva. Per questo Mush N Go, French Mush e Bonjour Drink finiscono davanti: il primo è più focus e formula, il secondo resta tecnico, il terzo è più facile da adottare.</p>
         </section>
 
-        <InnerNote emoji="📌" text="La scelta migliore non è sempre quella più forte: per una routine quotidiana, gusto, tolleranza e semplicità contano quanto la lista degli ingredienti." />
+        <InnerNote emoji="" text="La scelta migliore non è sempre quella più forte: per una routine quotidiana, gusto, tolleranza e semplicità contano quanto la lista degli ingredienti." />
 
         <section id="scegliere" class="rich-text seo-guide">
           <h2>Come scegliere un caffè ai funghi</h2>
@@ -168,12 +168,12 @@ const productSchema = (p: typeof config.products[number]) => ({
         </section>
 
         <ComparisonTable title="Guida rapida per scegliere" headers={[{label:'Profilo'}, {label:'Migliore opzione'}]} rows={[
-          { cells: ['<span class="table-fit">🏆 Miglior fit caffè ai funghi</span><span class="table-muted"> Focus, formula e adattogeni</span>', productLink('Mush N Go', '✅ Mush N Go')], highlight: true },
-          { cells: ['<span class="table-fit">🍄 Alternativa tecnica</span><span class="table-muted"> Estratti, coerenza e credibilità</span>', productLink('French Mush', '✅ French Mush') ] },
-          { cells: ['<span class="table-fit">☕ Più facile per iniziare</span><span class="table-muted"> Bevanda morbida e routine quotidiana</span>', productLink('Bonjour Drink', '✅ Bonjour Drink') ] },
-          { cells: ['<span class="table-fit">🌿 Miglior alternativa Not Coffee</span><span class="table-muted"> Ridurre il caffè senza perdere il rituale</span>', productLink('Clearly', '✅ Clearly Not Coffee') ] },
-          { cells: ['<span class="table-fit">⚡ Super coffee accessibile</span><span class="table-muted"> Prezzo e praticità</span>', productLink('Drink Dyna', '✅ Drink Dyna') ] },
-          { cells: ['<span class="table-fit">🔎 Mushroom coffee da confrontare</span><span class="table-muted"> Utile per completare il panorama</span>', productLink('Upraising', '✅ Upraising') ] },
+          { cells: ['<span class="table-fit">Miglior fit caffè ai funghi</span><span class="table-muted"> Focus, formula e adattogeni</span>', productLink('Mush N Go', 'Mush N Go')], highlight: true },
+          { cells: ['<span class="table-fit">Alternativa tecnica</span><span class="table-muted"> Estratti, coerenza e credibilità</span>', productLink('French Mush', 'French Mush') ] },
+          { cells: ['<span class="table-fit">☕ Più facile per iniziare</span><span class="table-muted"> Bevanda morbida e routine quotidiana</span>', productLink('Bonjour Drink', 'Bonjour Drink') ] },
+          { cells: ['<span class="table-fit">Miglior alternativa Not Coffee</span><span class="table-muted"> Ridurre il caffè senza perdere il rituale</span>', productLink('Clearly', 'Clearly Not Coffee') ] },
+          { cells: ['<span class="table-fit">⚡ Super coffee accessibile</span><span class="table-muted"> Prezzo e praticità</span>', productLink('Drink Dyna', 'Drink Dyna') ] },
+          { cells: ['<span class="table-fit">Mushroom coffee da confrontare</span><span class="table-muted"> Utile per completare il panorama</span>', productLink('Upraising', 'Upraising') ] },
         ]} />
 
         <section id="benefici" class="rich-text seo-guide">
@@ -215,10 +215,10 @@ const productSchema = (p: typeof config.products[number]) => ({
 </BaseLayout>
 
 <style>
-  .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide { margin-top: 3rem; }
   .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 1rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
   .seo-guide p { margin-bottom: 1rem; line-height: 1.625; color: #444; }
-  .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .faq-section { margin-top: 3rem; }
 
 .methodology-box { margin: 2rem 0; padding: 1.35rem; border: 1px solid #eadfce; border-radius: 18px; background: #f8f4ec; color: #2f2922; }
 .methodology-box, .methodology-box h2, .methodology-box p, .methodology-box li, .methodology-box strong { color: #2f2922; }
